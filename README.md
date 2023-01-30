@@ -66,8 +66,22 @@ Vis-a-vis organisation we choose an agile, iterative model.
 Principles: Optimise for speed and simplicity, maximise communication, get a working core as fast as possible, then add non-essential features.
 
 Features:
-- Product catalogue
-   - 
+1. There should be a product catalog that displays information about all the items that are 
+available. (Priority 1)
+2. Users should be able to create, add items to, and modify their shopping carts. (Priority 2)
+3. The Web site should maintain data for all category/sub-category of their items, such as the 
+brand, size/weight, price, and a description. Additionally, information about the registered 
+users and the details of their transactions, such as the items they bought, the price they 
+paid, the date on which they bought the items, and a mode of payment. (Priority 3)
+4. The first Web page of the Web site should be the Home page, which contains links to 
+information such as "About eGROCERY, Inc.", how to contact us, location, an overview of 
+the departments and their categories that are available in the store, and links to the other 
+Web pages on the site. (Priority 4)
+5. The Web site should also support security features such as user authentication and 
+password encryption. The encryption methods should be of the family of SHA-2 hashing 
+algorithms.  (Priority 5)
+6. A user registration form should be provided for new users to get registered.  (Priority 6)
+
 
 ## 3) Requirements Analysis
 Tools:
