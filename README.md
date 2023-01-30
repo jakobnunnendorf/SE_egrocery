@@ -1,10 +1,10 @@
 # SE_egrocery
-Our project for Software Engineering at Yale-NUS
-Team members: Abdullah, Marc, Jakob, Joshua, Pache
-Deadline:   By March - Implementation & Testing
-            26/03/23+ - Project Presentation
-            April - Final Report
-Bonus: Best project +5%
+### Our project for Software Engineering at Yale-NUS
+#### Team members: Abdullah, Marc, Jakob, Joshua, Pache
+#### Deadline:   By March - Implementation & Testing
+- 26/03/23+ -> Project Presentation
+- April -> Final Report
+#### Bonus: Best project +5%
 
 ## Objective:
 Create an e-grocery system that allows users to shop for grocery items, put them in a basket, (login) and purchase them online.
