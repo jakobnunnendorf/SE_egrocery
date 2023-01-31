@@ -1,0 +1,13 @@
+.filter-bar.frame{
+    border: 1px solid black;
+
+    width: 250px;
+    height: 100%;
+
+    position: fixed;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

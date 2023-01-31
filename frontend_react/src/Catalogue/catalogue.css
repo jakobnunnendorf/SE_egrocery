@@ -1,0 +1,19 @@
+.catalogue.frame{
+    /* Dimensions */
+    width: 100%;
+    height: 100vh;
+
+    /* Display */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Text */
+
+    /* Background */
+
+    /* Borders */
+    border: 1px solid black;
+    /* Other */
+
+}
