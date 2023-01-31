@@ -93,9 +93,7 @@ Tools:
 - Unicase (http://unicase.org)
 
 
-### Basic Requirements
-
-#### Product Catalog
+### Product Catalog
 Tag system dynamically generating a grid of products based on user filters
 **Front-end technologies:** CSS grid
 **Back-end technologies:** Database *(MySQL vs. MongoDB?)*
@@ -114,7 +112,7 @@ Tag system dynamically generating a grid of products based on user filters
 <li>Generate client on backend side or frontend side</li>
 </ul>
 
-#### Shopping Cart
+### Shopping Cart
 List of products selected by user for checkout; should supply a list products to a component that does checkout
 **Front-end technologies:** React
 
@@ -124,7 +122,7 @@ List of products selected by user for checkout; should supply a list products to
 <li>Once the user is done manipulating the frontend object i.e. checks out, react sends json to backend</li>
 </ol>
 
-#### User and Order Information
+### User and Order Information
 As grocery cart is checked out, this feature should calculate the total, ask for user's information and payment method, and execute the purchase.
 **Front-end technologies:** CSS, React
 **Front-end technologies:** Databases (different database for user information)
@@ -137,11 +135,11 @@ As grocery cart is checked out, this feature should calculate the total, ask for
 <li>Backend prompts frontend to display a confirmation page and sends a confirmation email after payment went through</li>
 </ol>
 
-#### Home Page
+### Home Page
 A landing page for users.
 **Front-end technologies:** CSS, React, HTML
 
-#### User registration
+### User registration
 Collects user information and stores it.
 **Front-end technologies:** CSS form
 **Back-end technologies:** Database (different from product info)
@@ -154,7 +152,7 @@ Flow:
 <li>Backend sends confirmation to frontend, frontend changes screen to confirm registration</li>
 </ol>
 
-#### User security
+### User security
 Uses SHA-2 encryption to secure user information
 **Back-end technologies:** Database, algorithm
 
