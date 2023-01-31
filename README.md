@@ -28,11 +28,8 @@ Create an e-grocery system that allows users to shop for grocery items, put them
 |   Task   | Abdullah |   Marc   |  Jakob   |  Joshua  |  Pache   |
 | :------: | :------: | :------: | :------: | :------: | :------: |
 |  Setup 1 |          |     x     |     x    |      x   |      x   |
-|   ...    |          |          |          |          |          |
 |  Backend |          |      x    |          |          |    x      |
-|   ...    |          |          |          |          |          |
 |  Frontend |    x      |         |      x    |          |         |
-|   ...    |          |          |          |          |          |
 |   Coordination |          |          |          |      x    |    x      |
 
 ## Setup
