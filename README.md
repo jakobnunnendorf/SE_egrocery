@@ -94,9 +94,9 @@ Tools:
 
 
 ### Product Catalog
-Tag system dynamically generating a grid of products based on user filters
-**Front-end technologies:** CSS grid
-**Back-end technologies:** Database *(MySQL vs. MongoDB?)*
+Tag system dynamically generating a grid of products based on user filters.<br>
+**Front-end technologies:** CSS grid<br>
+**Back-end technologies:** Database *(MySQL vs. MongoDB?)*<br>
 
 **Flow:**
 <ol>
@@ -113,8 +113,8 @@ Tag system dynamically generating a grid of products based on user filters
 </ul>
 
 ### Shopping Cart
-List of products selected by user for checkout; should supply a list products to a component that does checkout
-**Front-end technologies:** React
+List of products selected by user for checkout; should supply a list products to a component that does checkout<br>
+**Front-end technologies:** React<br>
 
 **Flow:**
 <ol>
@@ -123,9 +123,9 @@ List of products selected by user for checkout; should supply a list products to
 </ol>
 
 ### User and Order Information
-As grocery cart is checked out, this feature should calculate the total, ask for user's information and payment method, and execute the purchase.
-**Front-end technologies:** CSS, React
-**Front-end technologies:** Databases (different database for user information)
+As grocery cart is checked out, this feature should calculate the total, ask for user's information and payment method, and execute the purchase.<br>
+**Front-end technologies:** CSS, React<br>
+**Front-end technologies:** Databases (different database for user information)<br>
 
 **Flow:**
 <ol>
@@ -136,13 +136,13 @@ As grocery cart is checked out, this feature should calculate the total, ask for
 </ol>
 
 ### Home Page
-A landing page for users.
-**Front-end technologies:** CSS, React, HTML
+A landing page for users.<br>
+**Front-end technologies:** CSS, React, HTML<br>
 
 ### User registration
-Collects user information and stores it.
-**Front-end technologies:** CSS form
-**Back-end technologies:** Database (different from product info)
+Collects user information and stores it.<br>
+**Front-end technologies:** CSS form<br>
+**Back-end technologies:** Database (different from product info)<br>
 
 Flow:
 <ol>
@@ -153,8 +153,8 @@ Flow:
 </ol>
 
 ### User security
-Uses SHA-2 encryption to secure user information
-**Back-end technologies:** Database, algorithm
+Uses SHA-2 encryption to secure user information.<br>
+**Back-end technologies:** Database, algorithm<br>
 
 ## 4) Design
 
