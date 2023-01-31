@@ -27,8 +27,13 @@ Create an e-grocery system that allows users to shop for grocery items, put them
 ## Matrix of responsibilities
 |   Task   | Abdullah |   Marc   |  Jakob   |  Joshua  |  Pache   |
 | :------: | :------: | :------: | :------: | :------: | :------: |
-|  Setup 1 |          |          |     x    |      x   |      x   |
+|  Setup 1 |          |     x     |     x    |      x   |      x   |
 |   ...    |          |          |          |          |          |
+|  Backend |          |      x    |          |          |    x      |
+|   ...    |          |          |          |          |          |
+|  Frontend |    x      |         |      x    |          |         |
+|   ...    |          |          |          |          |          |
+|   Coordination |          |          |          |      x    |    x      |
 
 ## Setup
 
@@ -89,6 +94,72 @@ Tools:
 - RequisitePro (http://www-306.ibm.com/software/awdtools/reqpro/)
 - RD-Link (http://www.ring-zero.com)
 - Unicase (http://unicase.org)
+
+
+### Basic Requirements
+
+#### Product Catalog
+Tag system dynamically generating a grid of products based on user filters
+**Front-end technologies:** CSS grid
+**Back-end technologies:** Database *(MySQL vs. MongoDB?)*
+
+**Flow:**
+<ol>
+<li>Users choose filter parameters on front-end</li>
+<li>Frontend sends list of filters to Back-end</li>
+<li>Backend calculates which products fit filters</li>
+<li>Backend decides which products to supply to frontend</li>
+<li>Css grid automatically displays the items in grid</li>
+</ol>
+
+**Questions:**
+<ul>
+<li>Generate client on backend side or frontend side</li>
+</ul>
+
+#### Shopping Cart
+List of products selected by user for checkout; should supply a list products to a component that does checkout
+**Front-end technologies:** React
+
+**Flow:**
+<ol>
+<li>The user adds each item to a shopping cart object using react logic<li>
+<li>Once the user is done manipulating the frontend object i.e. checks out, react sends json to backend</li>
+</ol>
+
+#### User and Order Information
+As grocery cart is checked out, this feature should calculate the total, ask for user's information and payment method, and execute the purchase.
+**Front-end technologies:** CSS, React
+**Front-end technologies:** Databases (different database for user information)
+
+**Flow:**
+<ol>
+<li>Frontend calculates total, asks for user’s information and payment method</li>
+<li>Frontend creates an order object and sends it to backend</li>
+<li>Backend completes purchase and updates database accordingly</li>
+<li>Backend prompts frontend to display a confirmation page and sends a confirmation email after payment went through</li>
+</ol>
+
+#### Home Page
+A landing page for users.
+**Front-end technologies:** CSS, React, HTML
+
+#### User registration
+Collects user information and stores it.
+**Front-end technologies:** CSS form
+**Back-end technologies:** Database (different from product info)
+
+Flow:
+<ol>
+<li>Frontend form, once submitted sent to backend</li>
+<li>Backend confirms that there is no duplicate email</li>
+<li>If true then records user info to database</li>
+<li>Backend sends confirmation to frontend, frontend changes screen to confirm registration</li>
+</ol>
+
+#### User security
+Uses SHA-2 encryption to secure user information
+**Back-end technologies:** Database, algorithm
 
 ## 4) Design
 
