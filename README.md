@@ -45,8 +45,43 @@ Create an e-grocery system that allows users to shop for grocery items, put them
 7. Take meeting minutes with concrete action items.
    
 ## 1) Inception
+We want the user to be able to browse through a product catalog, select the desired items in the quantities that he wants, collect the items in a shopping cart and pay online. Possible add ons would be (confirmation email, user account, delivery).
 
 ## 2) Planning
+We divide into frontend (Abdullah, Jakob) and backend (Marc, Pache) + 1 flexible in-between (Joshua).
+We meet every Monday at 4pm to keep in sync. We try to work next to each other as much as possible to maximise communication.
+- Pache + Marc try to find overlapping work times.
+- Abdullah + Jakob try to find overlapping work times.
+
+Vis-a-vis organisation we choose an agile, iterative model.
+1) Create rough outline which parts of the system interact with each other
+2) Create a list with features ordered by priorities
+3) Move from highest to lowest priority feature and dynamically repeat cycle:
+   - Requirements
+   - Design
+   - Implementation
+   - Testing
+4) Test the whole system
+
+Principles: Optimise for speed and simplicity, maximise communication, get a working core as fast as possible, then add non-essential features.
+
+Features:
+1. There should be a product catalog that displays information about all the items that are 
+available. (Priority 1)
+2. Users should be able to create, add items to, and modify their shopping carts. (Priority 2)
+3. The Web site should maintain data for all category/sub-category of their items, such as the 
+brand, size/weight, price, and a description. Additionally, information about the registered 
+users and the details of their transactions, such as the items they bought, the price they 
+paid, the date on which they bought the items, and a mode of payment. (Priority 3)
+4. The first Web page of the Web site should be the Home page, which contains links to 
+information such as "About eGROCERY, Inc.", how to contact us, location, an overview of 
+the departments and their categories that are available in the store, and links to the other 
+Web pages on the site. (Priority 4)
+5. The Web site should also support security features such as user authentication and 
+password encryption. The encryption methods should be of the family of SHA-2 hashing 
+algorithms.  (Priority 5)
+6. A user registration form should be provided for new users to get registered.  (Priority 6)
+
 
 ## 3) Requirements Analysis
 Tools:
