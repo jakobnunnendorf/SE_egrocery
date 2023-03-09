@@ -1,0 +1,24 @@
+/* Font import */
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&family=Unbounded:wght@200;400;700;900&display=swap');
+</style>
+
+/* 
+To use the fonts:
+font-family: 'Manrope', sans-serif;
+font-family: 'Unbounded', cursive;
+*/
+
+/* Color definition */
+:root {
+    --EGcream: #fbebcd;
+    --EGlightgreen: #b4dca8;
+    --EGdarkgreen: #557d71; 
+    --EGbrown: #533b3c;
+    --EGviolet: #764767;
+}
+
+/*
+To use the variables: 
+body { background-color: var(--EGdarkgreen); }
+*/
