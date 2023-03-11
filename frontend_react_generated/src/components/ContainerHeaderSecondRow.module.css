@@ -1,0 +1,109 @@
+.ategories,
+.c {
+  position: relative;
+}
+.c {
+  text-decoration: underline;
+}
+.ategories {
+  font-family: var(--font-manrope);
+  color: var(--color-darkseagreen);
+}
+.categoriesButton,
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.navigationButtons {
+  gap: var(--gap-27xl);
+}
+.vectorIcon {
+  position: relative;
+  width: 48.48px;
+  height: 48.48px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.searchTerm {
+  position: relative;
+  font-weight: 500;
+}
+.art,
+.searchBox {
+  font-family: var(--font-manrope);
+}
+.searchBox {
+  border-radius: var(--br-xl);
+  background-color: var(--color-whitesmoke-200);
+  width: 1900px;
+  height: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-smi) var(--padding-xl);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  font-size: var(--font-size-21xl);
+  color: var(--color-black);
+}
+.art {
+  position: relative;
+  color: var(--color-dimgray);
+}
+.cartText {
+  width: 114px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.items,
+.vectorIcon1 {
+  position: relative;
+}
+.vectorIcon1 {
+  width: 47.14px;
+  height: 48.19px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.itemIndicatorAndIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-3xs);
+  font-size: 38.67px;
+  color: var(--color-darkslategray-100);
+  font-family: var(--font-manrope);
+}
+.cartButton,
+.headerSecondRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.cartButton {
+  border-radius: var(--br-xl);
+  background-color: var(--color-lightgoldenrodyellow);
+  width: 580px;
+  height: 100px;
+  flex-shrink: 0;
+  padding: var(--padding-3xs) var(--padding-base);
+  box-sizing: border-box;
+  color: var(--color-cadetblue);
+}
+.headerSecondRow {
+  width: 3718px;
+  text-align: left;
+  font-size: 48.86px;
+  color: var(--color-white);
+  font-family: var(--font-unbounded);
+}

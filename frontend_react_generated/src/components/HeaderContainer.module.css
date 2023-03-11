@@ -1,0 +1,85 @@
+.e,
+.grocery {
+  position: relative;
+}
+.e {
+  text-decoration: underline;
+}
+.grocery {
+  letter-spacing: -0.06em;
+  color: var(--color-darkseagreen);
+}
+.singapore {
+  position: relative;
+  font-size: 35.03px;
+  font-family: var(--font-manrope);
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.loggedInAs {
+  position: relative;
+  font-weight: 500;
+}
+.joshuaVargas {
+  position: relative;
+  color: var(--color-white);
+}
+.loggedInAsParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-lg);
+}
+.vectorIcon {
+  position: relative;
+  width: 33.37px;
+  height: 28.26px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.vectorParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+  color: var(--color-white);
+}
+.accountManagement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--gap-12xs);
+  font-size: 35.58px;
+  color: var(--color-gray-400);
+  font-family: var(--font-manrope);
+}
+.header,
+.headerFirstRow {
+  width: 3727px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header {
+  background-color: var(--color-cadetblue);
+  width: 3840px;
+  height: 340px;
+  flex-shrink: 0;
+  flex-direction: column;
+  padding: var(--padding-35xl) var(--padding-xl);
+  box-sizing: border-box;
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+  text-align: left;
+  font-size: var(--font-size-72xl-9);
+  color: var(--color-white);
+  font-family: var(--font-unbounded);
+}

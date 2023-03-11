@@ -1,0 +1,101 @@
+.vectorIcon {
+  width: 460px;
+  height: 300px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.b,
+.vectorIcon {
+  position: relative;
+}
+.itemPrice {
+  width: 460px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-lgi) var(--padding-xl) 0;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+.nescafeDolceGusto {
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+}
+.itemName {
+  width: 460px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--font-size-16xl);
+  color: var(--color-darkslategray-300);
+}
+.capsulesPerPack {
+  position: relative;
+  font-weight: 500;
+}
+.itemDetails {
+  width: 460px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-300);
+}
+.addToCart {
+  position: relative;
+  font-size: var(--font-size-10xl-6);
+  font-family: var(--font-manrope);
+  color: var(--color-white);
+  text-align: left;
+}
+.vectorIcon1 {
+  position: relative;
+  width: 24.43px;
+  height: 24.98px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.addToCartParent {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs) var(--padding-21xl);
+  background-color: var(--color-cadetblue);
+  border-radius: var(--br-6xs);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-7xl);
+}
+.addToCartButton,
+.itemBox {
+  display: flex;
+  flex-direction: column;
+}
+.addToCartButton {
+  width: 460px;
+  padding: var(--padding-11xl) var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-end;
+}
+.itemBox {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  overflow: hidden;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+  text-align: left;
+  font-size: 44.41px;
+  color: var(--color-darkslategray-200);
+  font-family: var(--font-manrope);
+}
