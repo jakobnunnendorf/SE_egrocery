@@ -12,6 +12,8 @@ export default function Body() {
         height: '100vh',
     }
   return (
-    <div style={styles}>Body</div>
+    <div style={styles}>Body
+    
+    </div>
   )
 }
