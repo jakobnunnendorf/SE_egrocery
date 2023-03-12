@@ -1,0 +1,28 @@
+.browseTheLatest {
+  position: relative;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 17.63px;
+  font-size: 16.65px;
+  color: var(--color-darkslategray-200);
+}
+.browseTheLatestInEgroceryParent {
+  border-radius: var(--br-5xs-5);
+  background-color: var(--color-whitesmoke-100);
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  padding: 28.125px 0;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 19.13px;
+  text-align: left;
+  font-size: 23.68px;
+  color: var(--color-gray-100);
+  font-family: var(--font-manrope);
+}
