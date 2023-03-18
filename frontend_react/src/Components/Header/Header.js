@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo_file from '../../logo.png';
 /*
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -27,11 +28,7 @@ function Header() {
     <div className="header">
       <div className="header__container1">
         <div className="header__left">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
-            alt="logo"
-            className="header__logo"
-          />
+          <img src={logo_file} alt="eGROCERY" className="header__logo"/>
           <div className="header__right">
             <div className="header__text1">You are logged in as Joshua Vargas</div>
             <div className="header__text2">Managed Account</div>
