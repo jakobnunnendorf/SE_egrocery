@@ -1,49 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react';
+/*
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+*/
+import './Header.css';
 
-// Import all the components
-import NavigationMenu from './NavigationMenu/NavigationMenu'
-import Logo from './Logo/Logo'
-import SearchBar from './SearchBar/SearchBar'
-import Cart from './Cart/Cart'
-import Account from './Account/Account'
+function Header() {
+  const [searchTerm, setSearchTerm] = useState("");
+  /* const [results, setResults] = useState([]); */
 
-export default function Header() {
-  const styles = {
-      frame:{
-        backgroundColor: "#557D71",
-        position: "fixed",
-        top: "0",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        border: "1px solid black",
-        width: "100%",
-        height: "12vh",
-        fontWeight: "bold",
-      },
-      headerThird:{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        alignItems: "center",
-        border: "1px solid black",
-        width: "33%",
-        height: "100%",
-      }
-  }
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+
   return (
-    <div style={styles.frame}>
-      <div style={styles.headerThird}>
-        <Logo/>
-        <NavigationMenu/>
+    <div className="header">
+      <div className="header__container1">
+        <div className="header__left">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+            alt="logo"
+            className="header__logo"
+          />
+          <div className="header__right">
+            <div className="header__text1">You are logged in as Joshua Vargas</div>
+            <div className="header__text2">Managed Account</div>
+          </div>
+        </div>
       </div>
-      <div style={styles.headerThird}>
-        <SearchBar/>
-      </div>
-      <div style={styles.headerThird}>
-        <Cart/>
-        <Account/>
+      <div className="header__container2">
+        <div className="header__buttons">
+          <button className="header__button">Home</button>
+          <button className="header__button">Categories</button>
+          <button className="header__button">Help</button>
+        </div>
+        <div className="header__search">
+          {/* Use SearchIcon as a React component */}
+          {/* Pass props like size or color if needed */}
+          {/* Use aria-label for accessibility */}
+          {/* Add value and onSearch props to control input */}
+          {/* Add placeholder prop for user guidance */}
+          <input
+            className="header__searchInput"
+            type="text"
+            placeholder="Search for something you love"
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+        </div>
+        <div className="header__cart">
+          <button className="header__cartButton">
+            <span className="header__cartText">Cart</span>
+          </button>
+        </div>
       </div>
     </div>
-  )
+  );
 }
+
+export default Header;
