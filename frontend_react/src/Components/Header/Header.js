@@ -13,6 +13,15 @@ function Header() {
     setSearchTerm(event.target.value);
   };
 
+  /*
+  const handleSubmit = (event) => {
+  event.preventDefault();
+  // Perform your search logic here
+  // For example: fetch data from an API using searchTerm
+  // Then update results state with setResults
+  };
+*/
+
 
   return (
     <div className="header">
