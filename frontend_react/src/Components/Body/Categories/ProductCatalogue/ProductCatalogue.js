@@ -149,9 +149,7 @@ export default function ProductCatalogue() {
 
   for (let i = 0; i < products.length; i++) {
     productContainers.push(
-      <div key={i}>
         <ProductContainer product={products[i]} />
-      </div>
     );
   }
 
