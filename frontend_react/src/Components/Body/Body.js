@@ -1,10 +1,11 @@
 import React from 'react'
+import Categories from './Categories/Categories'
 import ProductCatalogue from './Categories/ProductCatalogue/ProductCatalogue'
 export default function Body() {
     const styles={
         border: '1px solid red',
         position: 'relative',
-        top: "12vh",
+        top: "20vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -13,7 +14,7 @@ export default function Body() {
     }
   return (
     <div style={styles}>
-    <ProductCatalogue />
+      <Categories/>
     </div>
   )
 }

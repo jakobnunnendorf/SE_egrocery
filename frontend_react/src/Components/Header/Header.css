@@ -7,6 +7,11 @@
   flex-direction: column;
   font-family: 'Manrope', sans-serif;
   padding: 20px;
+  height: 20vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999999;
 }
 
 .header__container1 {
