@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ProductCatalogue from './Categories/ProductCatalogue/ProductCatalogue'
 export default function Body() {
     const styles={
         border: '1px solid red',
@@ -12,8 +12,8 @@ export default function Body() {
         height: '100vh',
     }
   return (
-    <div style={styles}>Body
-    
+    <div style={styles}>
+    <ProductCatalogue />
     </div>
   )
 }
