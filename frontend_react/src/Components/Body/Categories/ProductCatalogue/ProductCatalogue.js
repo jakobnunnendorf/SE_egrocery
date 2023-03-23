@@ -143,6 +143,7 @@ export default function ProductCatalogue() {
     height: "100%",
     width: "100%",
     flexWrap: "wrap",
+    justifyContent: "space-around"
   };
 
   const productContainers = [];
