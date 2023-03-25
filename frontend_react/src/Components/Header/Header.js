@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import logo_file from '../../logo.png';
+import account_icon from './account.png';
+import cartbutton_icon from './cart_darkgreen.png';
+import search_icon from './SearchBar/search.png';
 /*
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -7,6 +10,25 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import './Header.css';
 
 function Header() {
+  const styles = {
+    iconStyleA: {
+      height: "12px",
+      marginLeft: "6px",
+      marginRight: "6px"
+    },
+    iconStyleB: {
+      height: "24px",
+      marginLeft: "6px",
+      marginRight: "6px"
+    },
+    iconStyleC: {
+      height: "24px",
+      marginLeft: "0px",
+      marginRight: "6px"
+    },
+  };
+
+
   const [searchTerm, setSearchTerm] = useState("");
   /* const [results, setResults] = useState([]); */
 
@@ -28,18 +50,26 @@ function Header() {
     <div className="header">
       <div className="header__container1">
         <div className="header__left">
-          <img src={logo_file} alt="eGROCERY" className="header__logo"/>
-          <div className="header__right">
-            <div className="header__text1">You are logged in as Joshua Vargas</div>
-            <div className="header__text2">Managed Account</div>
+          <img src={logo_file} alt="eGROCERY" className="header__logo" />
+          &nbsp; &nbsp; Singapore
+        </div>
+        <div className="header__right">
+          <div className="header__text1">You are logged in as Joshua Vargas</div>
+          <div className="header__text2">
+            <img
+              style={styles.iconStyleA}
+              src={account_icon} // to be replaced with the correct icon
+              alt=""
+            />
+            Manage Account
           </div>
         </div>
       </div>
       <div className="header__container2">
         <div className="header__buttons">
-          <button className="header__button">Home</button>
-          <button className="header__button">Categories</button>
-          <button className="header__button">Help</button>
+          <button className="header__button"><span className='header__buttonCapital'>H</span>ome</button>
+          <button className="header__button"><span className='header__buttonCapital'>C</span>ategories</button>
+          <button className="header__button"><span className='header__buttonCapital'>H</span>elp</button>
         </div>
         <div className="header__search">
           {/* Use SearchIcon as a React component */}
@@ -47,6 +77,11 @@ function Header() {
           {/* Use aria-label for accessibility */}
           {/* Add value and onSearch props to control input */}
           {/* Add placeholder prop for user guidance */}
+          <img
+              style={styles.iconStyleB}
+              src={search_icon} // to be replaced with the correct icon
+              alt=""
+            />
           <input
             className="header__searchInput"
             type="text"
@@ -57,7 +92,14 @@ function Header() {
         </div>
         <div className="header__cart">
           <button className="header__cartButton">
-            <span className="header__cartText">Cart</span>
+          <img
+              style={styles.iconStyleC}
+              src={cartbutton_icon} // to be replaced with the correct icon
+              alt=""
+            />
+            <span className="header__cartTextCapital">C</span>
+            <span className="header__cartText">art</span>
+            0 items
           </button>
         </div>
       </div>
