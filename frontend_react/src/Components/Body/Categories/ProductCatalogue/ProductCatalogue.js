@@ -14,6 +14,10 @@ export default function ProductCatalogue(props) {
     left: "10vw",
   };
 
+  // const filteredProducts = products.filter((product) =>
+  //   props.activeFilter.some((filter) => product.categories.includes(filter))
+  // );
+
   return (
     <div style={containerStyles}>
       {products.map((product, index) => (

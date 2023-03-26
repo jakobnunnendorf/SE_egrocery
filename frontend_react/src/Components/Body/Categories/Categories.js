@@ -7,6 +7,7 @@ export default class Categories extends Component {
         super(props)
         this.state = {
             activeFilters: [],
+            theholyofabdullah: 2
         }
     }
     addFilters = (filter) => {
@@ -21,7 +22,7 @@ export default class Categories extends Component {
     return (
         <>
             <FilterBar addFilters={this.addFilters}/>
-            <ProductCatalogue/>
+            <ProductCatalogue activeFilters={this.state.activeFilters}/>
         </>
     )
   }
