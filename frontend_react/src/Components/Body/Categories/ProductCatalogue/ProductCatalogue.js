@@ -14,13 +14,21 @@ export default function ProductCatalogue(props) {
     left: "10vw",
   };
 
-  // const filteredProducts = products.filter((product) =>
-  //   props.activeFilter.some((filter) => product.categories.includes(filter))
-  // );
-
+  const filteredProducts = []
+  if (props.activeFilters.length > 0) {
+    products.forEach((product) => {
+      if (props.activeFilters.includes(product.categories[0])) {
+        filteredProducts.push(product)
+      }
+    })
+  }
+  else {
+    filteredProducts.push(...products)
+  }
+console.log(filteredProducts)
   return (
     <div style={containerStyles}>
-      {products.map((product, index) => (
+      {filteredProducts.map((product, index) => (
         <ProductContainer key={index} product={product} />
       ))}
     </div>

@@ -7,7 +7,6 @@ export default class Categories extends Component {
         super(props)
         this.state = {
             activeFilters: [],
-            theholyofabdullah: 2
         }
     }
     addFilters = (filter) => {

@@ -11,7 +11,7 @@ const products = [
     price: 2.49,
     title: "Carrots",
     description: "Fresh, organic carrots",
-    image: "https://images.unsplash.com/photo-1588561935000-047155e1ee0b",
+    image: "https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-1200.jpg",
     quantity: "1 lb | $2.49 per lb",
     categories: ["Vegetables"]
   },
@@ -19,7 +19,7 @@ const products = [
     price: 1.29,
     title: "Strawberries",
     description: "Fresh, sweet strawberries",
-    image: "https://i.imgur.com/w5V7K5b.jpg",
+    image: "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-11/strawberries-2-te-221104-dcb446.jpg",
     quantity: "1 lb | $1.29 per lb",
     categories: ["Fruits"]
   },
@@ -27,7 +27,7 @@ const products = [
     price: 3.99,
     title: "Sourdough Bread",
     description: "Fresh, artisan sourdough bread",
-    image: "https://cdn.pixabay.com/photo/2017/06/16/10/36/bread-2409661_1280.jpg",
+    image: "https://littlespoonfarm.com/wp-content/uploads/2020/01/Sourdough-Bread-Recipe-for-Beginners.jpg",
     quantity: "1 loaf | $3.99 per loaf",
     categories: ["Bakery"]
   },
@@ -43,7 +43,7 @@ const products = [
     price: 1.89,
     title: "Green Tea",
     description: "Refreshing, antioxidant-rich green tea",
-    image: "https://cdn.pixabay.com/photo/2015/07/02/10/40/coffee-828338_1280.jpg",
+    image: "https://truemart.pk/wp-content/uploads/2020/04/LIPTON-GREEN-TEA-Pure-Light-25-Tea-Bags-800x800-1.jpg",
     quantity: "20 tea bags | $1.89 per box",
     categories: ["Drinks"]
   },
@@ -51,7 +51,7 @@ const products = [
     price: 2.99,
     title: "Mixed Nuts",
     description: "Healthy, protein-packed mixed nuts",
-    image: "https://cdn.pixabay.com/photo/2015/10/12/14/57/nuts-984049_1280.jpg",
+    image: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/the-health-benefits-of-nuts-main-image-700-350-bb95ac2.jpg",
     quantity: "16 oz | $2.99 per bag",
     categories: ["Snacks"]
   },
@@ -59,7 +59,7 @@ const products = [
     price: 7.99,
     title: "Organic Honey",
     description: "Natural, raw organic honey",
-    image: "https://cdn.pixabay.com/photo/2016/07/22/09/59/bee-153120_1280.jpg",
+    image: "https://gopure.sg/wp-content/uploads/Linden-Org.jpg",
     quantity: "1 lb | $7.99 per jar",
     categories: ["Other"]
   }

@@ -30,7 +30,7 @@ export default function FilterBar(props) {
 
         <section>
           <h5>Price</h5>
-          {price_filters.map((filter, index) => (<Filter key={index} name={filter} addFilters={props.addFilters}/>))}
+          {price_filters.map((filter, index) => (<Filter key={index} name={filter} addPriceRanges={props.addPriceRanges}/>))}
         </section>
 
         <section>
