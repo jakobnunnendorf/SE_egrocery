@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700&family=Noto+Sans+SC:wght@100;400;700&family=Unbounded:wght@200;400;700;800&display=swap');
+
+.footer {
+  background-color: #557d71;
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.footer div:first-child {
+  flex-grow: 1;
+  align-items: left;
+}
+
+.footer div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: underline;
+  font-weight: 400;
+}
