@@ -25,7 +25,7 @@ export default function FilterBar(props) {
 
         <section>
           <h5>Categories</h5>
-          {category_filters.map((filter, index) => (<Filter key={index} name={filter} addFilters={props.addFilters}/>))}
+          {category_filters.map((filter, index) => (<Filter key={index} name={filter} addFilters={props.addFilters} active={props.activeFilters.includes(filter) ? true : false}/>))}
         </section>
 
         <section>

@@ -13,6 +13,13 @@ export default class Categories extends Component {
         if (!this.state.activeFilters.includes(filter)) {
             this.setState({
                 activeFilters: [...this.state.activeFilters, filter]
+            }
+        
+        )
+        }
+        else if (this.state.activeFilters.includes(filter)) {
+            this.setState({
+                activeFilters: this.state.activeFilters.filter(item => item !== filter)
             })
         }
     }
@@ -20,7 +27,7 @@ export default class Categories extends Component {
   render() {
     return (
         <>
-            <FilterBar addFilters={this.addFilters}/>
+            <FilterBar addFilters={this.addFilters} activeFilters={this.state.activeFilters}/>
             <ProductCatalogue activeFilters={this.state.activeFilters}/>
         </>
     )
