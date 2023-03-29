@@ -6,7 +6,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 */
 import './Header.css';
 
-function Header() {
+function Header(props) {
   const [searchTerm, setSearchTerm] = useState("");
   /* const [results, setResults] = useState([]); */
 
@@ -37,9 +37,9 @@ function Header() {
       </div>
       <div className="header__container2">
         <div className="header__buttons">
-          <button className="header__button">Home</button>
-          <button className="header__button">Categories</button>
-          <button className="header__button">Help</button>
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Home")}>Home</button>
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Products")}>Products</button>
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Help")}>Help</button>
         </div>
         <div className="header__search">
           {/* Use SearchIcon as a React component */}
@@ -56,7 +56,7 @@ function Header() {
           />
         </div>
         <div className="header__cart">
-          <button className="header__cartButton">
+          <button className="header__cartButton" onClick={()=>props.setActiveBodyComponent("Cart")}>
             <span className="header__cartText">Cart</span>
           </button>
         </div>

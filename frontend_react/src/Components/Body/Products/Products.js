@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import FilterBar from './FilterBar/FilterBar'
 import ProductCatalogue from './ProductCatalogue/ProductCatalogue'
 
-export default class Categories extends Component {
+export default class Products extends Component {
     constructor(props) {
         super(props)
         this.state = {
