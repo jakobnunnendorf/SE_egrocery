@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductContainer from './ProductContainer/ProductContainer';
-import products from './products';
+import product_data from './product_data';
 
 export default function ProductCatalogue(props) {
   function parsePriceRange(range) {
@@ -25,7 +25,7 @@ const containerStyles = {
   left: '10vw',
 };
 
-const filteredProducts = products.filter(product => {
+const filteredProducts = product_data.filter(product => {
   const categoryFilters = productfilters.filter(filter => typeof filter === 'string');
   const priceFilters = productfilters.filter(filter => Array.isArray(filter));
 
