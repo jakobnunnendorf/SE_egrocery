@@ -13,7 +13,6 @@ export default function FilterBar(props) {
     }
     const styles = {
         FilterBar_frame: {
-            border: '1px solid red',
             width: '20vw',
             height: '80vh',
             display: 'flex',

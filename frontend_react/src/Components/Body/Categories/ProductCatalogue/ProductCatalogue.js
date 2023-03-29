@@ -19,7 +19,6 @@ props.activeFilters.forEach(filter => {
 const containerStyles = {
   display: 'grid',
   gridTemplateColumns: 'repeat(4, 1fr)',
-  border: '1px solid blue',
   position: 'relative',
   height: '100%',
   width: '80vw',

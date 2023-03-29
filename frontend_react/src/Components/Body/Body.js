@@ -3,7 +3,6 @@ import Categories from './Categories/Categories'
 import ProductCatalogue from './Categories/ProductCatalogue/ProductCatalogue'
 export default function Body() {
     const styles={
-        border: '1px solid red',
         position: 'relative',
         top: "20vh",
         display: "flex",
