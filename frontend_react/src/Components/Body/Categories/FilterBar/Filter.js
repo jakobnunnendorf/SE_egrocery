@@ -31,7 +31,7 @@ export default function Filter(props) {
   return (
     <div>
         <button onClick={()=>props.addFilters(props.name)} style={props.active ? style.active : style.none}>
-            {props.name} <button style={style.none}>{props.active ? "X" : ""}</button>
+            {props.name} {props.active ? "X" : ""}
         </button>
     </div>
   )

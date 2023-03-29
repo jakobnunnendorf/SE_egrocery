@@ -2,6 +2,15 @@ import React from 'react'
 import Filter from './Filter'
 
 export default function FilterBar(props) {
+    function parsePriceRange(range) {
+      if (range.includes('>')) {
+        const lowerBound = parseFloat(range.replace('>', '').replace('$', '').trim());
+        return [lowerBound, Infinity];
+      } else {
+        const [lowerBound, upperBound] = range.split('-').map(price => parseFloat(price.replace('$', '').trim()));
+        return [lowerBound, upperBound];
+      }
+    }
     const styles = {
         FilterBar_frame: {
             border: '1px solid red',
@@ -25,12 +34,12 @@ export default function FilterBar(props) {
 
         <section>
           <h5>Categories</h5>
-          {category_filters.map((filter, index) => (<Filter key={index} name={filter} addFilters={props.addFilters} active={props.activeFilters.includes(filter) ? true : false}/>))}
+          {category_filters.map((filter, index) => (<Filter type="category" key={index} name={filter} addFilters={props.addFilters} active={props.activeFilters.includes(filter) ? true : false}/>))}
         </section>
 
         <section>
           <h5>Price</h5>
-          {price_filters.map((filter, index) => (<Filter key={index} name={filter} addPriceRanges={props.addPriceRanges}/>))}
+          {price_filters.map((filter, index) => (<Filter type="price" key={index} name={filter} addFilters={props.addFilters} active={props.activeFilters.includes(filter) ? true : false}/>))}
         </section>
 
         <section>
