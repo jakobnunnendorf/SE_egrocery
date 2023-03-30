@@ -1,14 +1,16 @@
-import React, { Component } from 'react'
-import FilterBar from './FilterBar/FilterBar'
-import ProductCatalogue from './ProductCatalogue/ProductCatalogue'
+import React, { Component } from 'react';
+import FilterBar from './FilterBar/FilterBar';
+import ProductCatalogue from './ProductCatalogue/ProductCatalogue';
+import BackendEmulator from './backend_emulator'; // Import BackendEmulator
 
 export default class Products extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            activeFilters: [],
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeFilters: [],
+      matchingProducts: [],
+    };
+  }
     styles = {
         frame: {
             width: "100%",
@@ -31,14 +33,23 @@ export default class Products extends Component {
             })
         }
     }
+    addMatchingProducts = (products) => {
+        this.setState({
+            matchingProducts: products
+        })
+    }
 
-  render() {
-    return (
-        <div style={this.styles.frame}>
-            <FilterBar addFilters={this.addFilters} activeFilters={this.state.activeFilters}/>
-            <ProductCatalogue activeFilters={this.state.activeFilters}/>
-        </div>
-    )
-  }
-}
-
+    render() {
+        return (
+          <div style={this.styles.frame}>
+            <FilterBar addFilters={this.addFilters} activeFilters={this.state.activeFilters} />
+            <ProductCatalogue activeFilters={this.state.activeFilters} matchingProducts={this.state.matchingProducts}/>
+            {/* Use BackendEmulator component with correct capitalization */}
+            <BackendEmulator
+              addMatchingProducts={this.addMatchingProducts}
+              activeFilters={this.state.activeFilters}
+            />
+          </div>
+        );
+      }
+    }
