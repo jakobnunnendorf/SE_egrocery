@@ -1,13 +1,17 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const products = [
   {
+    id: uuidv4(),
     price: 4.99,
     title: "Sirloin Steak",
     description: "Tender and juicy sirloin steak",
     image: "https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_1280.jpg",
     quantity: "1 lb | $4.99 per lb",
-    categories: ["Meat"]
+    categories: ["Meat"],
   },
   {
+    id: uuidv4(),
     price: 2.49,
     title: "Carrots",
     description: "Fresh, organic carrots",
@@ -16,6 +20,7 @@ const products = [
     categories: ["Vegetables"]
   },
   {
+    id: uuidv4(),
     price: 1.29,
     title: "Strawberries",
     description: "Fresh, sweet strawberries",
@@ -24,6 +29,7 @@ const products = [
     categories: ["Fruits"]
   },
   {
+    id: uuidv4(),
     price: 3.99,
     title: "Sourdough Bread",
     description: "Fresh, artisan sourdough bread",
@@ -32,6 +38,7 @@ const products = [
     categories: ["Bakery"]
   },
   {
+    id: uuidv4(),
     price: 4.49,
     title: "Greek Yogurt",
     description: "Creamy, delicious Greek yogurt",
@@ -40,6 +47,7 @@ const products = [
     categories: ["Dairy"]
   },
   {
+    id: uuidv4(),
     price: 1.89,
     title: "Green Tea",
     description: "Refreshing, antioxidant-rich green tea",
@@ -48,6 +56,7 @@ const products = [
     categories: ["Drinks"]
   },
   {
+    id: uuidv4(),
     price: 2.99,
     title: "Mixed Nuts",
     description: "Healthy, protein-packed mixed nuts",
@@ -56,6 +65,7 @@ const products = [
     categories: ["Snacks"]
   },
   {
+    id: uuidv4(),
     price: 7.99,
     title: "Organic Honey",
     description: "Natural, raw organic honey",
@@ -66,6 +76,7 @@ const products = [
 
 // Meat
 {
+  id: uuidv4(),
   price: 2.99,
   title: "Chicken Drumsticks",
   description: "Fresh and tender chicken drumsticks",
@@ -76,6 +87,7 @@ const products = [
 
 // Vegetables
 {
+  id: uuidv4(),
   price: 4.49,
   title: "Organic Spinach",
   description: "Fresh, organic baby spinach leaves",
@@ -86,6 +98,7 @@ const products = [
 
 // Fruits
 {
+  id: uuidv4(),
   price: 10.99,
   title: "Organic Blueberries",
   description: "Fresh, organic blueberries",
@@ -96,6 +109,7 @@ const products = [
 
 // Bakery
 {
+  id: uuidv4(),
   price: 12.99,
   title: "Chocolate Cake",
   description: "Delicious, moist chocolate cake",
@@ -106,6 +120,7 @@ const products = [
 
 // Dairy
 {
+  id: uuidv4(),
   price: 20.99,
   title: "Aged Cheddar Cheese",
   description: "Sharp, aged cheddar cheese",
@@ -116,6 +131,7 @@ const products = [
 
 // Drinks
 {
+  id: uuidv4(),
   price: 25.99,
   title: "Chardonnay Wine",
   description: "Crisp, fruity Chardonnay wine",
@@ -126,6 +142,7 @@ const products = [
 
 // Snacks
 {
+  id: uuidv4(),
   price: 3.49,
   title: "Potato Chips",
   description: "Crunchy, salty potato chips",
@@ -136,6 +153,7 @@ const products = [
 
 // Other
 {
+  id: uuidv4(),
   price: 22.99,
   title: "Extra Virgin Olive Oil",
   description: "Premium, cold-pressed extra virgin olive oil",
