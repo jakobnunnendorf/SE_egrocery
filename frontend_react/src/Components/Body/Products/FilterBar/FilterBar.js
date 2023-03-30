@@ -22,6 +22,7 @@ export default function FilterBar(props) {
             position: 'fixed',
             top: '20vh',
             left: '0',
+            backgroundColor: 'white',
         },
       }
       const category_filters = ["Meat", "Vegetables", "Fruits", "Bakery", "Dairy", "Drinks", "Snacks", "Other"]

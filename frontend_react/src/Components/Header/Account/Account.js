@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import account_icon from './../account.png';
+import account_icon from './account.png';
 
 export default class Account extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React from 'react'
-import cartbutton_icon from './../cart_darkgreen.png';
+import cartbutton_icon from './cart_darkgreen.png';
 
 export default function OpenCart(props) {
     const styles = {
