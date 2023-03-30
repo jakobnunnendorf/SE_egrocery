@@ -1,11 +1,11 @@
 import React from 'react'
-import logo_file from '../../../media/logo.png'
+import logo_file from '../../../logo.png';
 
 export default function Logo() {
-  const styles={
-    width: '200px',
-  }
   return (
-    <img src={logo_file} style={styles} alt=""/>
+    <div className="header__left"> {/* logo and country */}
+      <img src={logo_file} alt="eGROCERY" className="header__logo" />
+      &nbsp; &nbsp; Singapore
+    </div>
   )
 }

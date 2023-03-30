@@ -1,20 +1,11 @@
 import React from 'react'
 
 export default function NavigationMenu(props) {
-  const styles={
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    listStyle: 'none',
-    width: '100%',
-  }
   return (
-    <ul style={styles}>
-      <li><button onClick={() => props.setActiveBodyComponent("Home")}>Home</button></li>
-      <li><button onClick={() => props.setActiveBodyComponent("Products")}>Products</button></li>
-      <li><button onClick={() => props.setActiveBodyComponent("Promos")}>Promos</button></li>
-      <li><button onClick={() => props.setActiveBodyComponent("Support")}>Support</button></li>
-    <ul/>
-    </ul>
+    <div className="header__buttons">
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Home")}><span className='header__buttonCapital'>H</span>ome</button>
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Products")}><span className='header__buttonCapital'>P</span>roducts</button>
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Help")}><span className='header__buttonCapital'>H</span>elp</button>
+    </div>
   )
 }
