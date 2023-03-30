@@ -11,25 +11,29 @@ export default function ProductContainer({ product }) {
 
   const styles = {
     container: {
+      border: "1px solid #e1e4e8",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
       position: "relative",
       width: "270px",
       height: "450px",
       margin: "20px 20px 0 0",
+      borderRadius: "10px",
     },
     subContainer: {
       position: "relative",
-      border: "1px solid #e1e4e8",
-      borderTop: "0.5px solid #e1e4e8",
+      borderTop: "1px solid #e1e4e8",
       margin: "0 0 0 0",
     }
   };
   return (
     <>
       <div style={styles.container}>
-        <Image imageURL={product.image} />
+        <Image imageURL={product.images} />
         <div style={styles.subContainer}>
           <Price price={product.price} />
-          <Title title={product.title} />
+          <Title title={product.name} />
           <QuantityInfo quantity={product.quantity} />
           <AddToCart />
         </div>

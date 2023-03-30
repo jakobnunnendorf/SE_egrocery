@@ -27,11 +27,12 @@ export default function AddToCart() {
         },
         divStyle: {
             position: "relative",
-            // border: "1px solid red",
+            bottom: "5px",
             width: "100%",
             height: "60px",
             display: "flex",
-            alignItems: "center"
+            alignItems: "center",
+            marginBottom: "15px"
         }
 
       };
