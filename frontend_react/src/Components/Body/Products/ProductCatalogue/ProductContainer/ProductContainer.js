@@ -14,7 +14,7 @@ export default function ProductContainer({ product }) {
       position: "relative",
       width: "270px",
       height: "450px",
-      margin: "20px 20px 0 10px",
+      margin: "20px 20px 0 0",
     },
     subContainer: {
       position: "relative",

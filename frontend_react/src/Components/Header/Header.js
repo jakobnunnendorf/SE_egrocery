@@ -9,7 +9,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 */
 import './Header.css';
 
-function Header() {
+function Header(props) {
   const styles = {
     iconStyleA: {
       height: "12px",
@@ -67,9 +67,9 @@ function Header() {
       </div>
       <div className="header__container2">
         <div className="header__buttons">
-          <button className="header__button"><span className='header__buttonCapital'>H</span>ome</button>
-          <button className="header__button"><span className='header__buttonCapital'>C</span>ategories</button>
-          <button className="header__button"><span className='header__buttonCapital'>H</span>elp</button>
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Home")}><span className='header__buttonCapital'>H</span>ome</button>
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Products")}><span className='header__buttonCapital'>P</span>roducts</button>
+          <button className="header__button" onClick={()=> props.setActiveBodyComponent("Help")}><span className='header__buttonCapital'>H</span>elp</button>
         </div>
         <div className="header__search">
           {/* Use SearchIcon as a React component */}
@@ -91,7 +91,7 @@ function Header() {
           />
         </div>
         <div className="header__cart">
-          <button className="header__cartButton">
+          <button className="header__cartButton" onClick={()=>props.setActiveBodyComponent("Cart")}>
           <img
               style={styles.iconStyleC}
               src={cartbutton_icon} // to be replaced with the correct icon
