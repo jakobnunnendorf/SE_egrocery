@@ -19,10 +19,11 @@ props.activeFilters.forEach(filter => {
 const containerStyles = {
   display: 'grid',
   gridTemplateColumns: 'repeat(4, 1fr)',
-  position: 'relative',
   height: '100%',
   width: '80vw',
-  left: '10vw',
+
+  // position: 'relative',
+  // left: '20vw',
 };
 
 const filteredProducts = product_data.filter(product => {

@@ -9,6 +9,14 @@ export default class Products extends Component {
             activeFilters: [],
         }
     }
+    styles = {
+        frame: {
+            width: "100%",
+            height: "100%",
+
+            display: "flex",
+        }
+    }
     addFilters = (filter) => {
         if (!this.state.activeFilters.includes(filter)) {
             this.setState({
@@ -26,10 +34,10 @@ export default class Products extends Component {
 
   render() {
     return (
-        <>
+        <div style={this.styles.frame}>
             <FilterBar addFilters={this.addFilters} activeFilters={this.state.activeFilters}/>
             <ProductCatalogue activeFilters={this.state.activeFilters}/>
-        </>
+        </div>
     )
   }
 }

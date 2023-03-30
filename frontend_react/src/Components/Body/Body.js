@@ -7,13 +7,13 @@ import Cart from './Cart/Cart'
 
 export default function Body(props) {
     const styles={
-        border: "1px solid red",
         position: 'relative',
         top: "20vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         width: '100%',
+        minHeight: '80vh',
     }
     let renderComponent;
     switch(props.activeComponent) {

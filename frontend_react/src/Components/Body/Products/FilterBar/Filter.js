@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Filter(props) {
-    const style = {
+    const styles = {
         none: {
             background: "none",
             border: "none",
@@ -26,11 +26,11 @@ export default function Filter(props) {
             outline: "none",
             textAlign: "inherit",
             textDecoration: "none",
-        }
+        },
     }
   return (
     <div>
-        <button onClick={()=>props.addFilters(props.name)} style={props.active ? style.active : style.none}>
+        <button onClick={()=>props.addFilters(props.name)} style={props.active ? styles.active : styles.none}>
             {props.name} {props.active ? "X" : ""}
         </button>
     </div>
