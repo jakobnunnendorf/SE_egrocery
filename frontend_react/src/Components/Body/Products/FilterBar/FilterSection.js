@@ -1,5 +1,7 @@
 import React from 'react'
 import Filter from './Filter'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 
 export default function FilterSection(props) {
