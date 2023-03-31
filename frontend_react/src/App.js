@@ -64,6 +64,8 @@ function App() {
         cartProp={cartProp}
         addItemToCart={addItemToCart}
         removeItemFromCart={removeItemFromCart}
+        accountStatus={accountStatus}
+        setAccountStatus={setAccountStatus}
       ></Body>
       <Footer></Footer>
     </div>

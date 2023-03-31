@@ -36,7 +36,8 @@ function Header(props) {
       <div className="header__container1">
         <Logo/>
         <AccountButton
-        accountStatus={props.accountStatus}/>
+        accountStatus={props.accountStatus}
+        setActiveBodyComponent={props.setActiveBodyComponent}/>
       </div>
 
       <div className="header__container2">

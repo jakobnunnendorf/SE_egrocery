@@ -35,7 +35,12 @@ export default function AccountButton(props){
     return (
       <div className="header__right">
 
-          <div className="header__text1">{props.AccountButton ? "You are logged in as Joshua Vargas" : <span>Dont have an account yet?<button style={styles.bold_underlined}><br/>login | signup</button></span>}</div>
+          <div className="header__text1">
+            {props.AccountButton ?
+              "You are logged in as Joshua Vargas" :
+              <span>Dont have an account yet?
+                <button style={styles.bold_underlined}
+                onClick={()=>props.setActiveBodyComponent("Account")}><br/>login | signup</button></span>}</div>
 
           {props.AccountButton && <div className="header__text2">
 

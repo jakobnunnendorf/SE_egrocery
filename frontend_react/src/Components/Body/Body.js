@@ -4,6 +4,7 @@ import Home from './Home/Home'
 import Promos from './Promos/Promos'
 import Help from './Help/Help'
 import Cart from './Cart/Cart'
+import Account from './AccountPage/AccountPage'
 
 export default function Body(props) {
     const styles={
@@ -34,6 +35,10 @@ export default function Body(props) {
             cartProp={props.cartProp}
             removeItemFromCart={props.removeItemFromCart}
             addItemToCart={props.addItemToCart}/>
+            break;
+        case "Account":
+            renderComponent = <Account
+            accountStatus={props.accountStatus}/>
             break;
         default:
             renderComponent = <Products addItemToCart={props.addItemToCart}/>
