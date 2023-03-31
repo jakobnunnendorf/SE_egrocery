@@ -30,7 +30,10 @@ export default function Body(props) {
             renderComponent = <Help/>
             break;
         case "Cart":
-            renderComponent = <Cart cartProp={props.cartProp}/>
+            renderComponent = <Cart
+            cartProp={props.cartProp}
+            removeItemFromCart={props.removeItemFromCart}
+            addItemToCart={props.addItemToCart}/>
             break;
         default:
             renderComponent = <Products addItemToCart={props.addItemToCart}/>

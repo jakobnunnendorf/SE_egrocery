@@ -21,27 +21,29 @@ export default function Cart(props) {
           </tr>
         </thead>
         <tbody>
-          {props.cartProp.map((item) => (
-            <tr key={item.productInfo._id}>
+          {props.cartProp.map((item, index) => (
+            <tr key={index}>
               <td>
-                <img
-                  src={item.productInfo.images}
-                  alt={item.productInfo.name}
-                  className="product-image"
-                />
+                <img src={item.productInfo.images} alt={item.productInfo.name} className="cart-image" />
               </td>
               <td>{item.productInfo.name}</td>
-              <td>{item.quantity}</td>
-              <td>{item.productInfo.price.toFixed(2)}</td>
-              <td>{(item.productInfo.price * item.quantity).toFixed(2)}</td>
+              <td>
+                <div className="td-quantity">
+                <button onClick={() => props.removeItemFromCart(item.productInfo)} className="cart-button">-</button>
+                {item.quantity}
+                <button onClick={() => props.addItemToCart(item.productInfo)} className="cart-button">+</button>
+                </div>
+              </td>
+              <td>${item.productInfo.price.toFixed(2)}</td>
+              <td>${(item.productInfo.price * item.quantity).toFixed(2)}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <div className="total-price">
-        <strong>Total: </strong>${totalPrice.toFixed(2)}
+      <div className="cart-total">
+        <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
       </div>
-      <button className="btn btn-primary checkout-btn">Checkout</button>
+      <button className="checkout-button">Checkout</button> {/* Add the checkout button */}
     </div>
   );
 }
