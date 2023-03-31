@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Logo from './Logo/Logo';
-import Account from './Account/Account';
+import AccountButton from './AccountButton/AccountButton';
 import NavigationMenu from './NavigationMenu/NavigationMenu';
 import SearchBar from './SearchBar/SearchBar';
 import OpenCart from './OpenCart/OpenCart';
@@ -35,7 +35,8 @@ function Header(props) {
 
       <div className="header__container1">
         <Logo/>
-        <Account/>
+        <AccountButton
+        accountStatus={props.accountStatus}/>
       </div>
 
       <div className="header__container2">
