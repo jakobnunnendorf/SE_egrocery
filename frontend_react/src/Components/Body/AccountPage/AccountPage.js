@@ -7,11 +7,15 @@ export default class Account extends Component {
     constructor(props){
         super(props);
         this.state = {
-            hasAccount: false
+            hasAccount: false,
+            activeComponent: 'Signup'
         }
     }
     createAccount = () => {
         this.setState({hasAccount: true})
+    }
+    setActiveComponent = (component) => {
+        this.setState({activeComponent: component})
     }
   render() {
     return (
@@ -21,7 +25,8 @@ export default class Account extends Component {
           this.state.hasAccount ? 
             <Login/> : 
             <Signup
-            createAccount={this.createAccount}/>}
+            createAccount={this.createAccount}
+            setActiveComponent={this.setActiveComponent}/>}
       </div>
     )
   }
