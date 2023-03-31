@@ -29,7 +29,7 @@ export default function OpenCart(props) {
             />
             <span className="header__cartTextCapital">C</span>
             <span className="header__cartText">art</span>
-            0 items
+            {props.nOfCartItems} items
           </button>
         </div>
   )

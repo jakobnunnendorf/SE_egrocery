@@ -41,7 +41,9 @@ function Header(props) {
       <div className="header__container2">
         <NavigationMenu setActiveBodyComponent={props.setActiveBodyComponent}/>
         <SearchBar searchTerm={searchTerm} handleSearch={handleSearch}/>
-        <OpenCart setActiveBodyComponent={props.setActiveBodyComponent}/>
+        <OpenCart
+        setActiveBodyComponent={props.setActiveBodyComponent}
+        nOfCartItems={props.nOfCartItems}/>
       </div>
     </div>
   );

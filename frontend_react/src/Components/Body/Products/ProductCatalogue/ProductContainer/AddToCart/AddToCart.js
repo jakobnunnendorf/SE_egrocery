@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function AddToCart() {
+export default function AddToCart(props) {
     const styles = {
         buttonStyle: {
             position: "relative",
@@ -39,7 +39,8 @@ export default function AddToCart() {
     
       return (
         <div style={styles.divStyle}>
-          <button style={styles.buttonStyle}>
+          <button style={styles.buttonStyle}
+          onClick={()=>props.addItemToCart(props.product)}>
             ADD TO CART
             <img
               style={styles.iconStyle}

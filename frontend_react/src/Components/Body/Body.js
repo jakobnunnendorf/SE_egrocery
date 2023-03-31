@@ -21,7 +21,7 @@ export default function Body(props) {
             renderComponent = <Home/>
             break;
         case "Products":
-            renderComponent = <Products/>
+            renderComponent = <Products addItemToCart={props.addItemToCart}/>
             break;
         case "Promos":
             renderComponent = <Promos/>
@@ -30,10 +30,10 @@ export default function Body(props) {
             renderComponent = <Help/>
             break;
         case "Cart":
-            renderComponent = <Cart/>
+            renderComponent = <Cart cartProp={props.cartProp}/>
             break;
         default:
-            renderComponent = <Products/>
+            renderComponent = <Products addItemToCart={props.addItemToCart}/>
             break;
     }
   return (

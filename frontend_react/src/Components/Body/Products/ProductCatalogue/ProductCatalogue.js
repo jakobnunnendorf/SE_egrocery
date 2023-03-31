@@ -15,7 +15,10 @@ const containerStyles = {
   return (
     <div style={containerStyles}>
       {props.matchingProducts.map((product, index) => (
-        <ProductContainer key={index} product={product} />
+        <ProductContainer
+        key={index} 
+        product={product}
+        addItemToCart={props.addItemToCart}/>
       ))}
     </div>
   );

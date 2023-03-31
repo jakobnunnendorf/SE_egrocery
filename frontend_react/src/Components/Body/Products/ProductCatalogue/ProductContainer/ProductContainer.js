@@ -7,7 +7,7 @@ import AddToCart from './AddToCart/AddToCart'
 import QuantityInfo from './QuantityInfo/QuantityInfo'
 
 
-export default function ProductContainer({ product }) {
+export default function ProductContainer({ product, addItemToCart }) {
 
   const styles = {
     container: {
@@ -35,7 +35,9 @@ export default function ProductContainer({ product }) {
           <Price price={product.price} />
           <Title title={product.name} />
           <QuantityInfo quantity={product.quantity} />
-          <AddToCart />
+          <AddToCart
+          product={product}
+          addItemToCart={addItemToCart}/>
         </div>
       </div>
     </>

@@ -43,7 +43,10 @@ export default class Products extends Component {
         return (
           <div style={this.styles.frame}>
             <FilterBar addFilters={this.addFilters} activeFilters={this.state.activeFilters} />
-            <ProductCatalogue activeFilters={this.state.activeFilters} matchingProducts={this.state.matchingProducts}/>
+            <ProductCatalogue
+            activeFilters={this.state.activeFilters}
+            matchingProducts={this.state.matchingProducts}
+            addItemToCart={this.props.addItemToCart}/>
             {/* Use BackendEmulator component with correct capitalization */}
             <BackendEmulator
               addMatchingProducts={this.addMatchingProducts}
