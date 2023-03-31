@@ -1,7 +1,7 @@
 const filters = {
     categories: {
       name: "Categories",
-      filter_array: ["Fruits", "Vegetables", "Dairy", "Meats", "Bakery", "Beverages", "Snacks", "Frozen", "Pantry", "Personal Care", "Household"],
+      filter_array: ['Beauty and personal care', 'Food and beverages', 'Alcohol and tobacco', 'Toys and games', 'Pet supplies', 'Home and kitchen', 'Stationery and office supplies', 'Category', 'Electronics and gaming', 'Party supplies', 'Tools and hardware', 'Automotive']
     },
     prices: {
       name: "Price",

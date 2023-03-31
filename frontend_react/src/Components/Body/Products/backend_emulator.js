@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import test_data from './test_data.js';
 import { useCallback } from 'react';
 
@@ -12,19 +12,7 @@ const priceRanges = [
   { min: 50, max: Infinity, label: '>50 $' },
 ];
 
-const categories = [
-  'Fruits',
-  'Vegetables',
-  'Dairy',
-  'Meats',
-  'Bakery',
-  'Beverages',
-  'Snacks',
-  'Frozen',
-  'Pantry',
-  'Personal Care',
-  'Household',
-];
+const categories = ['Beauty and personal care', 'Food and beverages', 'Alcohol and tobacco', 'Toys and games', 'Pet supplies', 'Home and kitchen', 'Stationery and office supplies', 'Category', 'Electronics and gaming', 'Party supplies', 'Tools and hardware', 'Automotive']
 
 export default function BackendEmulator({ activeFilters, addMatchingProducts }) {
   function filterByPrice(product, selectedPrices) {
@@ -59,5 +47,5 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
     addMatchingProducts(findMatches(test_data, activeFilters));
   }, [activeFilters, addMatchingProducts, findMatches]);
 
-  return <div>backend_emulator</div>;
+  return null
 }
