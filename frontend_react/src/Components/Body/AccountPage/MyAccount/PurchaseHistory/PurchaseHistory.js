@@ -30,7 +30,7 @@ export default function PurchaseHistory({ purchaseData }) {
         ))}
       </tbody>
     </table>
-    <p className='note'> *Note: Please mention your Transaction ID when have any questions regarding your past orders.</p>
+    <p className='note'> *Note: Please mention your Transaction ID when contacting us for your past orders.</p>
     </div>
   )
 }
