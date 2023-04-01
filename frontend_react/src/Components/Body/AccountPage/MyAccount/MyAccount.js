@@ -25,7 +25,7 @@ export default class MyAccount extends Component {
       case "purchaseHistory":
         return <PurchaseHistory purchaseData={mockData[0].purchaseHistory}/>;
       case "tracking":
-        return <Tracking />;
+        return <Tracking status={"processing"}/>;  //input can be either processing, shipped, or delivered
       case "groceryLists":
         return <RecurringOrders />;
       default:
