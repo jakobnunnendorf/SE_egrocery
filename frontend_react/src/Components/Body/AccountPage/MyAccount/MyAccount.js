@@ -23,7 +23,7 @@ export default class MyAccount extends Component {
       case "accountInformation":
         return <AccountInfo userData={mockData[0]} />;
       case "purchaseHistory":
-        return <PurchaseHistory />;
+        return <PurchaseHistory purchaseData={mockData[0].purchaseHistory}/>;
       case "tracking":
         return <Tracking />;
       case "groceryLists":
