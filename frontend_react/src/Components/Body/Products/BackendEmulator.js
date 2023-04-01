@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
-import test_data from './test_data.js';
-import { useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import axios from 'axios';
 
 const priceRanges = [
   { min: 0, max: 1, label: '0-1 $' },
@@ -15,6 +14,26 @@ const priceRanges = [
 const categories = ['Beauty and personal care', 'Food and beverages', 'Alcohol and tobacco', 'Toys and games', 'Pet supplies', 'Home and kitchen', 'Stationery and office supplies', 'Category', 'Electronics and gaming', 'Party supplies', 'Tools and hardware', 'Automotive']
 
 export default function BackendEmulator({ activeFilters, addMatchingProducts }) {
+  const [test_data, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  async function fetchProducts() {
+    console.log("commencing fetch products")
+    setIsLoading(true);
+    try {
+      const response = await axios.get('http://127.0.0.1:5000/products');
+      setProducts(response.data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   function filterByPrice(product, selectedPrices) {
     return selectedPrices.some((priceLabel) => {
       const range = priceRanges.find((range) => range.label === priceLabel);
@@ -43,9 +62,13 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
     []
   );
 
-  useEffect(() => {
-    addMatchingProducts(findMatches(test_data, activeFilters));
-  }, [activeFilters, addMatchingProducts, findMatches]);
+useEffect(() => {
+  addMatchingProducts(findMatches(test_data, activeFilters));
+}, [test_data, activeFilters, addMatchingProducts, findMatches]);
 
-  return null
+  return (
+      <>
+        {isLoading ? <p>Loading products...</p> : null}
+      </>
+    )
 }
