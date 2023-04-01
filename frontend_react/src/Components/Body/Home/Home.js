@@ -31,9 +31,7 @@ export default function Home(props) {
           <SampleProductsContainer addItemToCart={props.addItemToCart}/>
         </div>
       </div>
-      <div className="test">
-      Test
-      </div> 
+      
     </div>
     
   );
