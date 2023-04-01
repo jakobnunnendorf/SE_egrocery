@@ -16,7 +16,7 @@ export default function SampleProductsContainer(props) {
   }, []);
 
   async function fetchProducts() {
-    console.log("commencing fetch products");
+    //console.log("commencing fetch products");
     setIsLoading(true);
     try {
       const response = await axios.get("http://127.0.0.1:5000/products");

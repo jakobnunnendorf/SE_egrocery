@@ -22,7 +22,7 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
   }, []);
 
   async function fetchProducts() {
-    console.log("commencing fetch products")
+    //console.log("commencing fetch products")
     setIsLoading(true);
     try {
       const response = await axios.get('http://127.0.0.1:5000/products');
@@ -33,6 +33,21 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
       setIsLoading(false);
     }
   }
+
+  async function getProductsByCategory(category) {
+    console.log('fetching prod by category')
+    const response = await fetch('http://127.0.0.1:5000/product/by_category', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ category }),
+    });
+
+    const products = await response.json();
+    console.log(products);
+    return products;
+}
 
   function filterByPrice(product, selectedPrices) {
     return selectedPrices.some((priceLabel) => {
@@ -63,7 +78,7 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
   );
 
 useEffect(() => {
-  addMatchingProducts(findMatches(test_data, activeFilters));
+  addMatchingProducts(getProductsByCategory('Food and beverages'));
 }, [test_data, activeFilters, addMatchingProducts, findMatches]);
 
   return (
