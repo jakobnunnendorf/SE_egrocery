@@ -18,7 +18,7 @@ app.json_encoder = JSONEncoder
 # set up the MongoDB connection
 client = MongoClient('mongodb://localhost:27017')
 db = client['egrocery']
-collection = db['inventory2']
+collection = db['inventory']
 
 # API endpoint for retrieving all list of products (including out of stock items)
 @app.route('/products', methods=['GET'])

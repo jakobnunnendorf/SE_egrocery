@@ -46,6 +46,7 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
 
     const products = await response.json();
     console.log(products);
+    setProducts(products);
     return products;
 }
 
@@ -78,11 +79,11 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
   );
 
 useEffect(() => {
-  addMatchingProducts(getProductsByCategory('Food and beverages'));
-}, [test_data, activeFilters, addMatchingProducts, findMatches]);
+  getProductsByCategory('Food and beverages');
+}, []);
 
   return (
-      <>
+    <>
         {isLoading ? <p>Loading products...</p> : null}
       </>
     )
