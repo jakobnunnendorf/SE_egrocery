@@ -8,9 +8,9 @@ const users = [
     address: "123 Main St, Anytown, USA",
     birthdate: "1990-01-01",
     purchaseHistory: [
-      { date: "2022-01-01", amount: 100.0 },
-      { date: "2022-02-01", amount: 50.0 },
-      { date: "2022-03-01", amount: 75.0 },
+      { date: "2022-01-01", amount: 100.0, id: "0001" },
+      { date: "2022-02-01", amount: 50.0, id: "0002"},
+      { date: "2022-03-01", amount: 75.0, id: "0002" },
     ],
     receipts: [
       { id: "0001", date: "2022-01-01", amount: 100.0 },

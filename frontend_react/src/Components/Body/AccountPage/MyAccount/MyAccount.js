@@ -5,6 +5,7 @@ import RecurringOrders from "./RecurringOrders/RecurringOrders";
 import PurchaseHistory from "./PurchaseHistory/PurchaseHistory";
 import AccountInfo from "./AccountInfo/AccountInfo";
 import mockData from "../mockUserData.js";
+import "./MyAccount.css";
 
 export default class MyAccount extends Component {
   state = {
@@ -35,37 +36,33 @@ export default class MyAccount extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            <div className="list-group">
-              <button
-                onClick={() => this.handleTabClick("accountInformation")}
-                className="list-group-item list-group-item-action"
-              >
-                Account Information
-              </button>
-              <button
-                onClick={() => this.handleTabClick("purchaseHistory")}
-                className="list-group-item list-group-item-action"
-              >
-                Purchase History
-              </button>
-              <button
-                onClick={() => this.handleTabClick("tracking")}
-                className="list-group-item list-group-item-action"
-              >
-                Tracking
-              </button>
-              <button
-                onClick={() => this.handleTabClick("groceryLists")}
-                className="list-group-item list-group-item-action"
-              >
-                Grocery Lists
-              </button>
-            </div>
-          </div>
-          <div className="col-md-8">{this.renderTabContent()}</div>
+        <div className="d-flex navb">
+          <button
+            onClick={() => this.handleTabClick("accountInformation")}
+            className="flex-grow-1 list-group-item list-group-item-action"
+          >
+            Account Information
+          </button>
+          <button
+            onClick={() => this.handleTabClick("purchaseHistory")}
+            className="flex-grow-1 list-group-item list-group-item-action"
+          >
+            Purchase History
+          </button>
+          <button
+            onClick={() => this.handleTabClick("tracking")}
+            className="flex-grow-1 list-group-item list-group-item-action"
+          >
+            Tracking
+          </button>
+          <button
+            onClick={() => this.handleTabClick("groceryLists")}
+            className="flex-grow-1 list-group-item list-group-item-action"
+          >
+            Grocery Lists
+          </button>
         </div>
+        <div className="col-md-8">{this.renderTabContent()}</div>
       </div>
     );
   }
