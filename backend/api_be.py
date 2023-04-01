@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify, json
 from pymongo import MongoClient
 from bson import ObjectId
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Custom JSON encoder to handle ObjectId
 class JSONEncoder(json.JSONEncoder):
@@ -16,7 +18,7 @@ app.json_encoder = JSONEncoder
 # set up the MongoDB connection
 client = MongoClient('mongodb://localhost:27017')
 db = client['egrocery']
-collection = db['inventory']
+collection = db['inventory2']
 
 # API endpoint for retrieving all list of products (including out of stock items)
 @app.route('/products', methods=['GET'])
@@ -152,6 +154,77 @@ def update_purchased_products():
 
 
 
+
+#ADMIN API ENDPOINTS
+# api endpoint for adding a new product
+@app.route('/product/add', methods=['POST'])
+def add_product():
+    new_product = request.json
+
+    # Required fields for a new product
+    required_fields = ['name', 'sku', 'price', 'availability', 'currency', 'brand', 'breadcrumbs', 'description', 'images', 'url', 'quantity', 'category']
+
+    # Validate the new product by checking if all required fields are present
+    for field in required_fields:
+        if field not in new_product:
+            return jsonify({"error": f"Missing required field: {field}"}), 400
+
+    # Insert the new product into the MongoDB collection
+    result = collection.insert_one(new_product)
+
+    # Return a success message with the new product's _id
+    return jsonify({"message": "Product added successfully", "_id": str(result.inserted_id)})
+
+
+#ADMIN API ENDPOINTS
+# API endpoint for deleting a product
+@app.route('/product/delete', methods=['DELETE'])
+def delete_product():
+    product_id = request.json.get('_id', None)
+
+    if not product_id:
+        return jsonify({"error": "Missing product _id"}), 400
+
+    result = collection.delete_one({"_id": ObjectId(product_id)})
+
+    if result.deleted_count > 0:
+        return jsonify({"message": "Product deleted successfully"})
+    else:
+        return jsonify({"error": "Product not found"}), 404
+
+
+
+
+
+
+
+# @app.route('/product/update', methods=['PUT'])
+# def update_product():
+#     update_data = request.json
+
+#     # Check if _id is provided in the request JSON
+#     if '_id' not in update_data:
+#         return jsonify({"error": "Missing _id field"}), 400
+
+#     # Get the _id from the update_data and remove it from the update_data
+#     product_id = update_data['_id']
+#     del update_data['_id']
+
+#     # Update the product in the MongoDB collection using the _id
+#     result = collection.update_one({"_id": ObjectId(product_id)}, {"$set": update_data})
+
+#     # Check if the product was found and updated
+#     if result.matched_count == 0:
+#         return jsonify({"error": "Product not found"}), 404
+#     elif result.modified_count == 0:
+#         return jsonify({"message": "No changes made to the product"})
+#     else:
+#         return jsonify({"message": "Product updated successfully"})
+
+
+
+
+
 if __name__ == '__main__':
     app.run()
 
@@ -263,3 +336,32 @@ if __name__ == '__main__':
 #             purchased_items.append(item)
 #     # return the list of purchased items
 #     return jsonify(purchased_items)
+
+
+
+#  API endpoint for updating a product in the database
+
+# @app.route('/product/update_v2', methods=['PUT'])
+# def update_product_v2():
+
+#     product_data = request.json
+
+#     # Check if product _id is provided
+#     product_id = product_data.get('_id', None)
+#     if not product_id:
+#         return jsonify({"error": "Missing product _id"}), 400
+
+#     # Remove the _id from the product_data
+#     product_data.pop('_id')
+
+#     # Update the product in the MongoDB collection
+#     result = collection.update_one({"_id": ObjectId(product_id)}, {"$set": product_data})
+
+#     if result.matched_count > 0:
+#         if result.modified_count > 0:
+#             # Return a success message
+#             return jsonify({"message": "Product updated successfully"})
+#         else:
+#             return jsonify({"message": "No changes were made to the product"})
+#     else:
+#         return jsonify({"error": "Product not found"}), 404
