@@ -27,16 +27,16 @@ def get_all_products():
     return jsonify(list(all_products))
 
 
-# API endpoint for retrieving products by category
+# API endpoint for retrieving products by category (multiple categories can be passed in the request body)
 @app.route('/product/by_category', methods=['POST'])
-def get_products_by_category():
-    category_filter = request.json.get('category', None)
-    
-    if category_filter:
-        filtered_products = collection.find({"category": category_filter})
+def get_products_by_categories():
+    categories_filter = request.json.get('categories', [])
+
+    if categories_filter:
+        filtered_products = collection.find({"category": {"$in": categories_filter}})
     else:
         filtered_products = collection.find({})
-        
+
     return jsonify(list(filtered_products))
 
 # API endpoint for searching products by their name, brand, price (min and max), availability, currency and category
@@ -229,6 +229,17 @@ if __name__ == '__main__':
     app.run()
 
 
+# API endpoint for retrieving products by category (single)
+#@app.route('/product/by_category', methods=['POST'])
+# def get_products_by_category():
+#     category_filter = request.json.get('category', None)
+    
+#     if category_filter:
+#         filtered_products = collection.find({"category": category_filter})
+#     else:
+#         filtered_products = collection.find({})
+        
+#     return jsonify(list(filtered_products))
 
 #@app.route('/categories', methods=['GET'])
 # def get_categories():
