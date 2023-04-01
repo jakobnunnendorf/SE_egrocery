@@ -2,9 +2,11 @@ from flask import Flask, request, jsonify, json
 from pymongo import MongoClient
 from bson import ObjectId
 from flask_cors import CORS
+from user_routes import user_routes
 
 app = Flask(__name__)
 CORS(app)
+#app.register_blueprint(user_routes)
 
 # Custom JSON encoder to handle ObjectId
 class JSONEncoder(json.JSONEncoder):
@@ -15,10 +17,14 @@ class JSONEncoder(json.JSONEncoder):
 
 app.json_encoder = JSONEncoder
 
+
 # set up the MongoDB connection
 client = MongoClient('mongodb://localhost:27017')
 db = client['egrocery']
-collection = db['inventory']
+collection = db['inventory2']
+
+app.register_blueprint(user_routes)
+
 
 # API endpoint for retrieving all list of products (including out of stock items)
 @app.route('/products', methods=['GET'])
@@ -27,7 +33,7 @@ def get_all_products():
     return jsonify(list(all_products))
 
 
-# API endpoint for retrieving products by category
+#API endpoint for retrieving products by category (single)
 @app.route('/product/by_category', methods=['POST'])
 def get_products_by_category():
     category_filter = request.json.get('category', None)
@@ -37,6 +43,18 @@ def get_products_by_category():
     else:
         filtered_products = collection.find({})
         
+    return jsonify(list(filtered_products))
+
+# API endpoint for retrieving products by category (multiple categories can be passed in the request body)
+@app.route('/product/by_categories', methods=['POST'])
+def get_products_by_categories():
+    categories_filter = request.json.get('categories', [])
+
+    if categories_filter:
+        filtered_products = collection.find({"category": {"$in": categories_filter}})
+    else:
+        filtered_products = collection.find({})
+
     return jsonify(list(filtered_products))
 
 # API endpoint for searching products by their name, brand, price (min and max), availability, currency and category
@@ -228,6 +246,17 @@ def delete_product():
 if __name__ == '__main__':
     app.run()
 
+# # API endpoint for retrieving products by category (multiple categories can be passed in the request body)
+# @app.route('/product/by_category', methods=['POST'])
+# def get_products_by_categories():
+#     categories_filter = request.json.get('categories', [])
+
+#     if categories_filter:
+#         filtered_products = collection.find({"category": {"$in": categories_filter}})
+#     else:
+#         filtered_products = collection.find({})
+
+#     return jsonify(list(filtered_products))
 
 
 #@app.route('/categories', methods=['GET'])
