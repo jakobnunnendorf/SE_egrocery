@@ -1,75 +1,70 @@
 import React, { Component } from "react";
 import "react-tabs/style/react-tabs.css";
+import Tracking from "./Tracking/Tracking";
+import RecurringOrders from "./RecurringOrders/RecurringOrders";
+import PurchaseHistory from "./PurchaseHistory/PurchaseHistory";
+import AccountInfo from "./AccountInfo/AccountInfo";
+import mockData from "../mockUserData.js";
 
 export default class MyAccount extends Component {
+  state = {
+    activeTab: "accountInformation",
+  };
+
+  handleTabClick = (tab) => {
+    this.setState({ activeTab: tab });
+  };
+
+  renderTabContent = () => {
+    const { activeTab } = this.state;
+
+    switch (activeTab) {
+      case "accountInformation":
+        return <AccountInfo userData={mockData[0]} />;
+      case "purchaseHistory":
+        return <PurchaseHistory />;
+      case "tracking":
+        return <Tracking />;
+      case "groceryLists":
+        return <RecurringOrders />;
+      default:
+        return null;
+    }
+  };
+
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-4">
             <div className="list-group">
-              <a
-                href="#accountInformation"
+              <button
+                onClick={() => this.handleTabClick("accountInformation")}
                 className="list-group-item list-group-item-action"
-                data-toggle="list"
-                role="tab"
               >
                 Account Information
-              </a>
-              <a
-                href="#purchaseHistory"
+              </button>
+              <button
+                onClick={() => this.handleTabClick("purchaseHistory")}
                 className="list-group-item list-group-item-action"
-                data-toggle="list"
-                role="tab"
               >
                 Purchase History
-              </a>
-              <a
-                href="#tracking"
+              </button>
+              <button
+                onClick={() => this.handleTabClick("tracking")}
                 className="list-group-item list-group-item-action"
-                data-toggle="list"
-                role="tab"
               >
                 Tracking
-              </a>
-              <a
-                href="#groceryLists"
+              </button>
+              <button
+                onClick={() => this.handleTabClick("groceryLists")}
                 className="list-group-item list-group-item-action"
-                data-toggle="list"
-                role="tab"
               >
                 Grocery Lists
-              </a>
+              </button>
             </div>
           </div>
-          <div className="col-md-8">
-            <div className="tab-content">
-              <div
-                className="tab-pane fade show active"
-                id="accountInformation"
-                role="tabpanel"
-              >
-                <h3>Account Information</h3>
-                {/* Add your account information content here */}
-              </div>
-              <div
-                className="tab-pane fade"
-                id="purchaseHistory"
-                role="tabpanel"
-              >
-                <h3>Purchase History</h3>
-                {/* Add your purchase history content here */}
-              </div>
-              <div className="tab-pane fade" id="tracking" role="tabpanel">
-                <h3>Tracking</h3>
-                {/* Add your tracking content here */}
-              </div>
-              <div className="tab-pane fade" id="groceryLists" role="tabpanel">
-                <h3>Grocery Lists</h3>
-                {/* Add your grocery lists content here */}
-              </div>
-            </div>
-          </div>
+          <div className="col-md-8">{this.renderTabContent()}</div>
         </div>
       </div>
     );
