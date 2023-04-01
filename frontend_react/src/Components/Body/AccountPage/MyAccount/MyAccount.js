@@ -62,7 +62,7 @@ export default class MyAccount extends Component {
             Grocery Lists
           </button>
         </div>
-        <div className="col-md-8">{this.renderTabContent()}</div>
+        <div >{this.renderTabContent()}</div>
       </div>
     );
   }
