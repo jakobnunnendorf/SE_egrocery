@@ -35,6 +35,7 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
       const products = response.data;
       console.log(products);
       setProducts(products);
+      addMatchingProducts(products);
       return products;
     } catch (error) {
       console.error('Error fetching products by category:', error);
@@ -44,8 +45,8 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
   }
   
   useEffect(() => {
-    getProductsByCategory('Food and beverages');
-  }, []);
+    getProductsByCategory(activeFilters[0]);
+  }, [activeFilters]);
   
   return (
     <>
