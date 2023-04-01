@@ -6,22 +6,22 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
   const [isLoading, setIsLoading] = useState(true);
 
   
-  // async function fetchProducts() {
-  //   //console.log("commencing fetch products")
-  //   setIsLoading(true);
-  //   try {
-  //     const response = await axios.get('http://127.0.0.1:5000/products');
-  //     setProducts(response.data);
-  //   } catch (error) {
-  //     console.error('Error fetching products:', error);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // }
+  async function fetchProducts() {
+    //console.log("commencing fetch products")
+    setIsLoading(true);
+    try {
+      const response = await axios.get('http://127.0.0.1:5000/products');
+        setProducts(response.data);
+      } catch (error) {
+      console.error('Error fetching products:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
 
-  // useEffect(() => {
-    //   fetchProducts();
-    // }, []);
+  useEffect(() => {
+      fetchProducts();
+    }, []);
   
 
   async function getProductsByCategory(category) {
@@ -50,7 +50,7 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
   
   return (
     <>
-        {isLoading ? <p>Loading products...</p> : null}
+        
       </>
     )
   }
