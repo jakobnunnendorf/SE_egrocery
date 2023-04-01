@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react";
 
-export default function SignupConfirmation() {
+export default function SignupConfirmation(props) {
   return (
-    <div>Thank you for signing up!</div>
-  )
+    <div>
+      <p>Thank you for signing up!</p>
+      <button
+        className="btn btn-primary"
+        onClick={() => props.setActiveComponent("Login")}
+      >
+        Go to Login
+      </button>
+    </div>
+  );
 }

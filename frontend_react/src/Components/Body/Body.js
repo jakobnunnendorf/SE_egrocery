@@ -4,17 +4,19 @@ import Home from './Home/Home'
 import Promos from './Promos/Promos'
 import Help from './Help/Help'
 import Cart from './Cart/Cart'
-import Account from './AccountPage/AccountPage'
+import AccountPage from './AccountPage/AccountPage'
 
 export default function Body(props) {
     const styles={
-        position: 'relative',
-        top: "20vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: '100%',
-        minHeight: '80vh',
+        frame: {
+            position: 'relative',
+            top: "20vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: '100%',
+            minHeight: '80vh',
+        },
     }
     let renderComponent;
     switch(props.activeComponent) {
@@ -37,15 +39,16 @@ export default function Body(props) {
             addItemToCart={props.addItemToCart}/>
             break;
         case "Account":
-            renderComponent = <Account
+            renderComponent = <AccountPage
             accountStatus={props.accountStatus}/>
             break;
         default:
-            renderComponent = <Products addItemToCart={props.addItemToCart}/>
+            renderComponent = <AccountPage
+            accountStatus={props.accountStatus}/>
             break;
     }
   return (
-    <div style={styles}>
+    <div style={styles.frame}>
       {renderComponent}
     </div>
   )
