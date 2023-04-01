@@ -18,7 +18,7 @@ export default function Body(props) {
     let renderComponent;
     switch(props.activeComponent) {
         case "Home":
-            renderComponent = <Home/>
+            renderComponent = <Home addItemToCart={props.addItemToCart}/>
             break;
         case "Products":
             renderComponent = <Products addItemToCart={props.addItemToCart}/>
@@ -36,7 +36,7 @@ export default function Body(props) {
             addItemToCart={props.addItemToCart}/>
             break;
         default:
-            renderComponent = <Products addItemToCart={props.addItemToCart}/>
+            renderComponent = <Home/>
             break;
     }
   return (
