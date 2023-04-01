@@ -29,10 +29,10 @@ export default class AccountPage extends Component {
   render() {
     return (
       <div style={this.styles.frame}>
-        {this.props.accountStatus ? (
+        {this.state.activeComponent === "MyAccount" ? (
           <MyAccount />
         ) : this.state.activeComponent === "Login" ? (
-          <Login />
+          <Login setActiveComponent={this.setActiveComponent} />
         ) : (
           <Signup
             createAccount={this.createAccount}

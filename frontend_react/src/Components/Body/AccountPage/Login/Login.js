@@ -1,7 +1,8 @@
 import React from "react";
 import "./Login.css";
+import users from "../mockUserData";
 
-export default function Login() {
+export default function Login(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = {
@@ -9,8 +10,18 @@ export default function Login() {
       password: event.target.password.value,
     };
 
-    console.log("User logged in:", formData);
-    // Add your login logic here, e.g., API call to authenticate the user
+    const user = users.find(
+      (user) =>
+        user.email === formData.email && user.password === formData.password
+    );
+
+    if (user) {
+      console.log("User logged in:", formData);
+      props.setActiveComponent("MyAccount")
+    } else {
+      console.log("Invalid email or password");
+      // Display an error message to inform the user that the login has failed
+    }
   };
 
   return (
