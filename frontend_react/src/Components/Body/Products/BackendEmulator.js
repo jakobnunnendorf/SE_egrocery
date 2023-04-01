@@ -49,6 +49,22 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
     return products;
 }
 
+async function searchProducts(filters) {
+  console.log('fetching prod by search filter')
+  const response = await fetch('http://127.0.0.1:5000/product/search_v2', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(filters),
+  });
+
+  const products = await response.json();
+  console.log(products);
+  return products;
+}
+
+
   function filterByPrice(product, selectedPrices) {
     return selectedPrices.some((priceLabel) => {
       const range = priceRanges.find((range) => range.label === priceLabel);
@@ -78,7 +94,9 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
   );
 
 useEffect(() => {
-  addMatchingProducts(getProductsByCategory('Food and beverages'));
+ searchProducts({
+  "currency": "USD"
+});
 }, [test_data, activeFilters, addMatchingProducts, findMatches]);
 
   return (
