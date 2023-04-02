@@ -73,8 +73,8 @@ export default function Cart(props) {
             <h3 className="total-price">Total Price: ${totalPrice.toFixed(2)}</h3>
           </div>
           <button
-            className="checkout-button"
-            onClick={() => setCheckoutModalOpen(true)}
+            className="checkout-button" 
+            onClick={() => setCheckoutModalOpen(true)}  disabled={totalPrice <= 0}
           >
             Checkout
           </button>
