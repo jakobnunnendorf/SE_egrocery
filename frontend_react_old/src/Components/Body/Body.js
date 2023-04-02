@@ -4,19 +4,16 @@ import Home from './Home/Home'
 import Promos from './Promos/Promos'
 import Help from './Help/Help'
 import Cart from './Cart/Cart'
-import AccountPage from './AccountPage/AccountPage'
 
 export default function Body(props) {
     const styles={
-        frame: {
-            position: 'relative',
-            top: "20vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: '100%',
-            minHeight: '80vh',
-        },
+        position: 'relative',
+        top: "20vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: '100%',
+        minHeight: '80vh',
     }
     let renderComponent;
     switch(props.activeComponent) {
@@ -24,8 +21,7 @@ export default function Body(props) {
             renderComponent = <Home addItemToCart={props.addItemToCart}/>
             break;
         case "Products":
-            renderComponent =<Products addItemToCart={props.addItemToCart}
-            searchResults={props.searchResults}/>
+            renderComponent = <Products addItemToCart={props.addItemToCart}/>
             break;
         case "Promos":
             renderComponent = <Promos/>
@@ -39,16 +35,12 @@ export default function Body(props) {
             removeItemFromCart={props.removeItemFromCart}
             addItemToCart={props.addItemToCart}/>
             break;
-        case "Account":
-            renderComponent = <AccountPage
-            accountStatus={props.accountStatus}/>
-            break;
         default:
-            renderComponent = <Home addItemToCart={props.addItemToCart} />;
+            renderComponent = <Home/>
             break;
     }
   return (
-    <div style={styles.frame}>
+    <div style={styles}>
       {renderComponent}
     </div>
   )

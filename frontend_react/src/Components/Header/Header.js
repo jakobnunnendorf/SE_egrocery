@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from './Logo/Logo';
 import AccountButton from './AccountButton/AccountButton';
 import NavigationMenu from './NavigationMenu/NavigationMenu';
@@ -14,6 +14,7 @@ function Header(props) {
 
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchOutput, setSearchOutput] = useState([]);
   /* const [results, setResults] = useState([]); */
 
   const handleSearch = (event) => {
@@ -28,6 +29,58 @@ function Header(props) {
   // Then update results state with setResults
   };
 */
+
+async function searchProducts(searchFilters) {
+  try {
+    const response = await fetch('http://127.0.0.1:5000/product/search_v2', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(searchFilters),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const products = await response.json();
+    console.log(products[0]);
+    return products;
+  } catch (error) {
+    console.error('Error searching products:', error);
+  }
+}
+
+// useEffect(() => {
+//   console.log("searchTerm", searchTerm);
+//   const fetchSearchResults = async () => {
+//     const results = await searchProducts({ name: searchTerm });
+//     setSearchOutput(results);
+//   };
+
+//   if (searchTerm) {
+//     fetchSearchResults();
+//   } else {
+//     setSearchOutput([]);
+//   }
+// }, [searchTerm]);
+
+useEffect(() => {
+  console.log("searchTerm", searchTerm);
+  const fetchSearchResults = async () => {
+    const results = await searchProducts({ name: searchTerm });
+    setSearchOutput(results);
+    props.setSearchResults(results); // Update the parent component's state
+  };
+
+  if (searchTerm) {
+    fetchSearchResults();
+  } else {
+    setSearchOutput([]);
+    props.setSearchResults([]); // Reset the parent component's state
+  }
+}, [searchTerm]);
 
 
   return (

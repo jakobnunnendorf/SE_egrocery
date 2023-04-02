@@ -9,10 +9,6 @@ export default function SearchBar(props) {
       marginRight: "6px"
     },
   };
-
-
-  
-
   return (
     <div className="header__search">
       <img

@@ -13,9 +13,7 @@ function App() {
   // set the active component in the body
   const [activeBodyComponent, setActiveBodyComponent] = useState('home'); // by default the home page component is active
   const [cartProp, setCartProp] = useState([]); // by default the cart is empty
-  const [accountStatus, setAccountStatus] = useState(false); // by default the user is not logged in
   const nOfCartItems = cartProp.reduce((accumulator, item) => accumulator + item.quantity, 0);
-  const [searchResults, setSearchResults] = useState([]);
 
   function addItemToCart(product) {
     const itemIndex = cartProp.findIndex(item => item.productInfo === product);
@@ -58,17 +56,12 @@ function App() {
       <Header
         setActiveBodyComponent={setActiveBodyComponent}
         nOfCartItems={nOfCartItems}
-        accountStatus={accountStatus}
-        setSearchResults={setSearchResults}
       ></Header>
       <Body
         activeComponent={activeBodyComponent}
         cartProp={cartProp}
         addItemToCart={addItemToCart}
         removeItemFromCart={removeItemFromCart}
-        accountStatus={accountStatus}
-        setAccountStatus={setAccountStatus}
-        searchResults={searchResults}
       ></Body>
       <Footer></Footer>
     </div>
