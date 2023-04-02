@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FilterBar from './FilterBar/FilterBar';
 import ProductCatalogue from './ProductCatalogue/ProductCatalogue';
-import BackendEmulator from './backend_emulator'; // Import BackendEmulator
+import BackendEmulator from './BackendEmulator'; // Import BackendEmulator
 
 export default class Products extends Component {
   constructor(props) {

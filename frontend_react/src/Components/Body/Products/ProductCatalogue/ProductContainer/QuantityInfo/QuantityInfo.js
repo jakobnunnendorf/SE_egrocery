@@ -12,7 +12,7 @@ export default function QuantityInfo({quantity}) {
     };
     return (
         <div>
-        <p style={styles}>{quantity > 5 ? "in stock 🟢" : quantity > 1 ? "low stock 🟡" : "back soon 🟠"} </p>
+        <p style={styles}>{quantity > 5 ? `${quantity} in stock 🟢` : quantity > 1 ? `${quantity} in stock 🟡` : "out of stock 🟠"} </p>
         </div>
     );
     }
