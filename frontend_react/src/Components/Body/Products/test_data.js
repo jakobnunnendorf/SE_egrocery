@@ -4259,42 +4259,42 @@ const products = [
 
 export default products;
 
-function standardDeviation(arr) {
-  const n = arr.length;
-  const mean = arr.reduce((a, b) => a + b) / n;
-  const deviations = arr.map(x => (x - mean) ** 2);
-  const variance = deviations.reduce((a, b) => a + b) / n;
-  return Math.sqrt(variance);
-}
+// function standardDeviation(arr) {
+//   const n = arr.length;
+//   const mean = arr.reduce((a, b) => a + b) / n;
+//   const deviations = arr.map(x => (x - mean) ** 2);
+//   const variance = deviations.reduce((a, b) => a + b) / n;
+//   return Math.sqrt(variance);
+// }
 
-const categories = new Set(products.map(product => product.category));
-console.log("Unique Categories: ", Array.from(categories));
+// const categories = new Set(products.map(product => product.category));
+// // console.log("Unique Categories: ", Array.from(categories));
 
-const prices = products.map(product => product.price);
-console.log("Highest Price: ", Math.max(...prices).toFixed(2));
-console.log("Lowest Price: ", Math.min(...prices).toFixed(3));
-console.log("Median Price: ", (prices.reduce((a, b) => a + b) / prices.length).toFixed(2));
+// const prices = products.map(product => product.price);
+// // console.log("Highest Price: ", Math.max(...prices).toFixed(2));
+// // console.log("Lowest Price: ", Math.min(...prices).toFixed(3));
+// // console.log("Median Price: ", (prices.reduce((a, b) => a + b) / prices.length).toFixed(2));
 
-const brands = new Set(products.map(product => product.brand));
-console.log("Price Standard Deviation: ", standardDeviation(prices).toFixed(2));
-console.log("Unique Brands: ", Array.from(brands));
+// const brands = new Set(products.map(product => product.brand));
+// // console.log("Price Standard Deviation: ", standardDeviation(prices).toFixed(2));
+// // console.log("Unique Brands: ", Array.from(brands));
 
-const itemsPerCategory = {};
-let totalItems = 0;
+// const itemsPerCategory = {};
+// let totalItems = 0;
 
-products.forEach(product => {
-  if (product.category) {
-    if (itemsPerCategory[product.category]) {
-      itemsPerCategory[product.category]++;
-    } else {
-      itemsPerCategory[product.category] = 1;
-    }
-  } else {
-    itemsPerCategory['No Category'] = itemsPerCategory['No Category'] ? itemsPerCategory['No Category'] + 1 : 1;
-  }
+// products.forEach(product => {
+//   if (product.category) {
+//     if (itemsPerCategory[product.category]) {
+//       itemsPerCategory[product.category]++;
+//     } else {
+//       itemsPerCategory[product.category] = 1;
+//     }
+//   } else {
+//     itemsPerCategory['No Category'] = itemsPerCategory['No Category'] ? itemsPerCategory['No Category'] + 1 : 1;
+//   }
 
-  totalItems++;
-});
+//   totalItems++;
+// });
 
-console.log("Items per Category: ", itemsPerCategory);
-console.log("Total Items: ", totalItems);
+// // console.log("Items per Category: ", itemsPerCategory);
+// // console.log("Total Items: ", totalItems);
