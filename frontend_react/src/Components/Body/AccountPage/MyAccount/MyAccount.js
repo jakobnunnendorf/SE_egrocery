@@ -62,12 +62,12 @@ export default class MyAccount extends Component {
           >
             Tracking
           </button>
-          {this.props.loggedInUser.role === "admin"}<button
+          {this.props.loggedInUser.role === "admin" && <button
             onClick={() => this.handleTabClick("groceryLists")}
             className="flex-grow-1 list-group-item list-group-item-action"
           >
             Admin Panel
-          </button>
+          </button>}
         </div>
         <div >{this.renderTabContent()}</div>
       </div>
