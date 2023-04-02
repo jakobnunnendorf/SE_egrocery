@@ -70,7 +70,7 @@ export default function Cart(props) {
             </tbody>
           </table>
           <div className="cart-total">
-            <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
+            <h3 className="total-price">Total Price: ${totalPrice.toFixed(2)}</h3>
           </div>
           <button
             className="checkout-button"
@@ -87,10 +87,10 @@ export default function Cart(props) {
             <CheckoutForm />
           </Elements>
           <button
-            className="close-modal-button"
+            className="cancel-button"
             onClick={() => setCheckoutModalOpen(false)}
           >
-            Close
+            Cancel
           </button>
         </div>
       )}
