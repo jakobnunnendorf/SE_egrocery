@@ -14,6 +14,7 @@ export default function Home(props) {
   }, [fadeIn]);
 
   const imageLinks = [
+    'https://thecare.com.sg/wp-content/uploads/2023/02/TC-Main-Banner-2-2.jpg',
     'https://cdn.dribbble.com/users/6046827/screenshots/15375566/media/6ac626ec63592e34c1b31d11fa1d8871.jpg',
     'https://smartorganic.com/wp-content/uploads/2021/01/10481_fb.jpg',
     'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2019%2F10%2F22%2Fbrownies-2000.jpeg',
