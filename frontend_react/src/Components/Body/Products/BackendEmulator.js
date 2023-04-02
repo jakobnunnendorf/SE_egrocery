@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-export default function BackendEmulator({ activeFilters, addMatchingProducts }) {
+export default function BackendEmulator({ activeFilters, addMatchingProducts,  purchasedItems}) {
   const [test_data, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -40,6 +40,29 @@ export default function BackendEmulator({ activeFilters, addMatchingProducts }) 
       setIsLoading(false);
     }
   }
+
+  const updateProductQuantities = useCallback((purchasedItems) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) => {
+        const purchasedItem = purchasedItems.find((item) => item._id === product._id);
+
+        if (purchasedItem) {
+          return {
+            ...product,
+            quantity: product.quantity - purchasedItem.quantity,
+          };
+        }
+
+        return product;
+      })
+    );
+  }, []);
+
+  useEffect(() => {
+    if (purchasedItems && purchasedItems.length > 0) {
+      updateProductQuantities(purchasedItems);
+    }
+  }, [purchasedItems, updateProductQuantities]);
 
   async function getProductsByCategories(categories) {
     setIsLoading(true);

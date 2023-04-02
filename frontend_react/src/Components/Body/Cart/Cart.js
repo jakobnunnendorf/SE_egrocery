@@ -16,33 +16,33 @@ export default function Cart(props) {
     0
   );
 
-  const parsedCart = props.cartProp.map((item) => ({
-    _id: item.productInfo._id,
-    quantity: item.quantity,
-  }));
+  // const parsedCart = props.cartProp.map((item) => ({
+  //   _id: item.productInfo._id,
+  //   quantity: item.quantity,
+  // }));
 
-  async function updatePurchasedProducts(purchasedItems) {
-    console.log(JSON.stringify({ purchased_items: purchasedItems }));
-    try {
-      const response = await fetch('http://localhost:5000/product/purchase', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ purchased_items: purchasedItems }),
-      });
+  // async function updatePurchasedProducts(purchasedItems) {
+  //   console.log(JSON.stringify({ purchased_items: purchasedItems }));
+  //   try {
+  //     const response = await fetch('http://localhost:5000/product/purchase', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ purchased_items: purchasedItems }),
+  //     });
   
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! Status: ${response.status}`);
+  //     }
   
-      const jsonResponse = await response.json();
-      console.log(jsonResponse.message);
-      return jsonResponse;
-    } catch (error) {
-      console.error('Error updating purchased products:', error);
-    }
-  }
+  //     const jsonResponse = await response.json();
+  //     console.log(jsonResponse.message);
+  //     return jsonResponse;
+  //   } catch (error) {
+  //     console.error('Error updating purchased products:', error);
+  //   }
+  // }
   
   // const purchasedItems = [
   //   {
@@ -59,8 +59,9 @@ export default function Cart(props) {
     // setCheckoutModalOpen(true);
     //updatePurchasedProducts(purchasedItems);
     console.log('checkout ouput');
-    console.log(parsedCart); // Use parsedCart instead of purchasedItems
-    updatePurchasedProducts(parsedCart); // Use parsedCart instead of purchasedItems
+    // console.log(parsedCart); // Use parsedCart instead of purchasedItems
+    // updatePurchasedProducts(parsedCart); // Use parsedCart instead of purchasedItems
+    props.setPurchasedItems(props.cartProp);
   };
   
 

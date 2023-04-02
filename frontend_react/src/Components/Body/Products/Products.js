@@ -72,6 +72,7 @@ export default class Products extends Component {
         <BackendEmulator
           addMatchingProducts={this.addMatchingProducts}
           activeFilters={this.state.activeFilters}
+          purchasedItems={this.props.purchasedItems}
         />
       </div>
     );

@@ -16,6 +16,7 @@ function App() {
   const [accountStatus, setAccountStatus] = useState(false); // by default the user is not logged in
   const nOfCartItems = cartProp.reduce((accumulator, item) => accumulator + item.quantity, 0);
   const [searchResults, setSearchResults] = useState([]);
+  const [purchasedItems, setPurchasedItems] = useState([]);
 
   function addItemToCart(product) {
     const itemIndex = cartProp.findIndex(item => item.productInfo === product);
@@ -69,6 +70,8 @@ function App() {
         accountStatus={accountStatus}
         setAccountStatus={setAccountStatus}
         searchResults={searchResults}
+        purchasedItems={purchasedItems}
+        setPurchasedItems={setPurchasedItems}
       ></Body>
       <Footer></Footer>
     </div>

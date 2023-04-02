@@ -37,7 +37,8 @@ export default function Body(props) {
             renderComponent = <Cart
             cartProp={props.cartProp}
             removeItemFromCart={props.removeItemFromCart}
-            addItemToCart={props.addItemToCart}/>
+            addItemToCart={props.addItemToCart}
+            setPurchasedItems={props.setPurchasedItems}/>
             break;
         case "Account":
             renderComponent = <AccountPage
