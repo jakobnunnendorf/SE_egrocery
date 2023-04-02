@@ -43,9 +43,7 @@ export default function Body(props) {
             accountStatus={props.accountStatus}/>
             break;
         default:
-            renderComponent = (
-              <AccountPage accountStatus={props.accountStatus} />
-            );
+            renderComponent = <Home addItemToCart={props.addItemToCart} />;
             break;
     }
   return (
