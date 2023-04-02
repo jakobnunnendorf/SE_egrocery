@@ -45,6 +45,7 @@ export default class AccountPage extends Component {
         receipts: [],
         imageURL:
           "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png",
+        role: "user",
       },
     });
   };
