@@ -1,0 +1,84 @@
+.shipping-info {
+  margin-top: 0px;
+  padding: 2rem;
+  /* border-top: 1px solid #ccc;  */
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 96%);
+  width: 80%;
+}
+
+.shipping-info h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.shipping-info p.intro {
+  text-align: center;
+}
+
+.shipping-info h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.shipping-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.shipping-info ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.shipping-info li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.shipping-info .important {
+  font-weight: bold;
+}
+
+.shipping-info .warning {
+  color: red;
+  font-weight: bold;
+}
+
+.table-container {
+  margin-top: 2rem;
+  width: 50%;
+}
+
+.table-container table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.table-container th,
+.table-container td {
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.table-container th {
+  background-color: #e0e0e0;
+}
+
+.table-container tbody tr:hover {
+  background-color: #fff;
+}
+
+.shipping-info .table-container {
+  margin-top: 2rem;
+  width: 70%;
+  margin: 0 auto;
+}

@@ -1,7 +1,7 @@
 
 .help {
     font-family: 'Manrope', sans-serif;
-    padding-top: 20vh;
+    padding-top: 5vh;
   }
    .help__title {
     font-size: 36px;
@@ -11,7 +11,11 @@
   }
    .help__section {
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+  
    .help__section h2 {
     font-size: 24px;
     font-weight: bold;
@@ -20,13 +24,22 @@
    .help__contact-form,
   .help__contact-info {
     display: inline-block;
-    width: 45%;
+    width: 80%;
     vertical-align: top;
   }
-   .help__contact-form {
-    margin-right: 5%;
+  
+  .phone,.email {
+    margin-bottom: 10px;
+    margin-right: 10px;
   }
-   .help__contact-info {
-    margin-left: 5%;
+  .email {
+    color: inherit;
+    text-decoration: none;
   }
- 
+  
+  .help__image {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 50px;
+    margin-top:0px;
+  }

@@ -1,5 +1,11 @@
+
 import React, { useState } from 'react';
 import './FAQ.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faQuestionCircle);
 
 const questions = [
   {
@@ -25,28 +31,31 @@ const questions = [
 ];
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeIndices, setActiveIndices] = useState([]);
 
   const toggleQuestion = (index) => {
-    if (activeIndex === index) {
-      setActiveIndex(-1);
+    if (activeIndices.includes(index)) {
+      setActiveIndices(activeIndices.filter((i) => i !== index));
     } else {
-      setActiveIndex(index);
+      setActiveIndices([...activeIndices, index]);
     }
   };
 
   return (
     <div className="faq">
-      <h2>Frequently Asked Questions</h2>
+      <h2 className="heading_faq"> Frequently Asked Questions <FontAwesomeIcon icon="question-circle" /> </h2>
       {questions.map((q, index) => (
         <div key={index} className="faq__item">
-          <button
-            className={`faq__question ${activeIndex === index ? 'faq__question--active' : ''}`}
-            onClick={() => toggleQuestion(index)}
-          >
-            {q.question}
-          </button>
-          {activeIndex === index && <div className="faq__answer">{q.answer}</div>}
+          <div className="faq__question-wrapper">
+            <button
+              className={`faq__question ${activeIndices.includes(index) ? 'faq__question--active' : ''}`}
+              onClick={() => toggleQuestion(index)}
+            >
+              {q.question}
+            </button>
+            <span className={`faq__arrow ${activeIndices.includes(index) ? 'faq__arrow--active' : ''}`} onClick={() => toggleQuestion(index)}>&#9660;</span>
+          </div>
+          {activeIndices.includes(index) && <div className="faq__answer">{q.answer}</div>}
         </div>
       ))}
     </div>
