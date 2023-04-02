@@ -7,6 +7,7 @@ import PaymentMethodsAndSecurity from './PaymentMethodsAndSecurity/PaymentMethod
 import ContactUs from './ContactUs/ContactUs';
 import { faPhone, faEnvelope, faMobileAlt,faFax, faMobile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ContactForm from './ContactForm/ContactForm';
 
 import './Help.css';
 
@@ -21,7 +22,7 @@ export default function Help() {
       <div className="help__section">
         <h2><FontAwesomeIcon icon={faFax} /> Contact Us</h2>
         <div className="help__contact-form">
-          <ContactUs />
+          <ContactForm />
         </div>
         <div className="help__contact-info">
           <p>
