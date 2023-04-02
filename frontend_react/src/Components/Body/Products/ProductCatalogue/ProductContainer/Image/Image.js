@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Image({ imageURL }) {
   const [imageSrc, setImageSrc] = useState(imageURL);
-  const defaultImage = 'https://via.placeholder.com/270x450?text=Image+Not+Available';
+  const defaultImage = 'https://m.media-amazon.com/images/I/71J-c9GJs0L._AC_UF894,1000_QL80_.jpg';
 
   const styles = {
     width: '100%',
