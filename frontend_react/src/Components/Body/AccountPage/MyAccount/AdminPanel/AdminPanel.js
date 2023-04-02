@@ -55,9 +55,9 @@ export default function AdminPanel() {
         <p>6. Click the "Upload" button to upload the CSV file to the system.</p>
         <p>7. Wait for the system to process the file and update the product inventory.</p>
         <p>8. Verify that the product inventory has been updated with the new information.</p>
-      </div>
+    </div>
       <div className="input_field">
-        <h3> <FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Updated Inventory as csv </h3>
+        <h4> <FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Updated Inventory as csv </h4>
         <span> 
         <FontAwesomeIcon icon={faFile} /> &nbsp;
         <input
