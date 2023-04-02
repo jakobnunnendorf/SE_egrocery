@@ -70,10 +70,12 @@ export default class Products extends Component {
         />
         {/* Use BackendEmulator component with correct capitalization */}
         <BackendEmulator
-          addMatchingProducts={this.addMatchingProducts}
-          activeFilters={this.state.activeFilters}
-          purchasedItems={this.props.purchasedItems}
-        />
+  addMatchingProducts={this.addMatchingProducts}
+  setMatchingProducts={this.addMatchingProducts} // Add this line
+  activeFilters={this.state.activeFilters}
+  purchasedItems={this.props.purchasedItems}
+/>
+
       </div>
     );
   }

@@ -25,7 +25,8 @@ export default function Body(props) {
             break;
         case "Products":
             renderComponent =<Products addItemToCart={props.addItemToCart}
-            searchResults={props.searchResults}/>
+            searchResults={props.searchResults}
+            purchasedItems={props.purchasedItems}/>
             break;
         case "Promos":
             renderComponent = <Promos/>
