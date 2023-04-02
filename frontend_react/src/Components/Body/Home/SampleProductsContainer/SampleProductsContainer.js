@@ -1,32 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import products from '../../Products/test_data.js';
 import ProductContainer from '../../Products/ProductCatalogue/ProductContainer/ProductContainer';
 
 
 export default function SampleProductsContainer(props) {
-
-  // fetch products from backend
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  async function fetchProducts() {
-    //console.log("commencing fetch products");
-    setIsLoading(true);
-    try {
-      const response = await axios.get("http://127.0.0.1:5000/products");
-      setProducts(response.data);
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
     const [startIndex, setStartIndex] = useState(0);
     const itemsPerPage = 4;
     const randomProducts = products.slice(startIndex, startIndex + itemsPerPage);
