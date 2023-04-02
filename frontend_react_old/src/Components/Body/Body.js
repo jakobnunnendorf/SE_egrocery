@@ -36,8 +36,7 @@ export default function Body(props) {
             addItemToCart={props.addItemToCart}/>
             break;
         default:
-            renderComponent = <Products addItemToCart={props.addItemToCart}
-            searchResults={props.searchResults}/>
+            renderComponent = <Home/>
             break;
     }
   return (
