@@ -8,9 +8,9 @@ const users = [
     address: "123 Main St, Anytown, USA",
     birthdate: "1990-01-01",
     purchaseHistory: [
-      { date: "2022-01-01", amount: 100.0, id: "0001" },
-      { date: "2022-02-01", amount: 50.0, id: "0002"},
-      { date: "2022-03-01", amount: 75.0, id: "0002" },
+      { date: "2022-01-01", amount: 100.0, id: "0001", status: "processing" },
+      { date: "2022-02-01", amount: 50.0, id: "0002", status: "delivered" },
+      { date: "2022-03-01", amount: 75.0, id: "0002", status: "delivered" },
     ],
     receipts: [
       { id: "0001", date: "2022-01-01", amount: 100.0 },
@@ -29,9 +29,9 @@ const users = [
     address: "456 Oak St, Anytown, USA",
     birthdate: "1991-02-01",
     purchaseHistory: [
-      { date: "2022-01-01", amount: 200.0 },
-      { date: "2022-02-01", amount: 150.0 },
-      { date: "2022-03-01", amount: 175.0 },
+      { date: "2022-01-01", amount: 200.0, status: "processing" },
+      { date: "2022-02-01", amount: 150.0, status: "delivered" },
+      { date: "2022-03-01", amount: 175.0, status: "delivered" },
     ],
     receipts: [
       { id: "0004", date: "2022-01-01", amount: 200.0 },
@@ -50,9 +50,9 @@ const users = [
     address: "789 Elm St, Anytown, USA",
     birthdate: "1992-03-01",
     purchaseHistory: [
-      { date: "2022-01-01", amount: 300.0 },
-      { date: "2022-02-01", amount: 250.0 },
-      { date: "2022-03-01", amount: 275.0 },
+      { date: "2022-01-01", amount: 300.0, status: "processing" },
+      { date: "2022-02-01", amount: 250.0, status: "delivered" },
+      { date: "2022-03-01", amount: 275.0, status: "delivered" },
     ],
     receipts: [
       { id: "0007", date: "2022-01-01", amount: 300.0 },
@@ -71,9 +71,9 @@ const users = [
     address: "246 Pine St, Anytown, USA",
     birthdate: "1993-04-01",
     purchaseHistory: [
-      { date: "2022-01-01", amount: 50.0 },
-      { date: "2022-02-01", amount: 75.0 },
-      { date: "2022-03-01", amount: 100.0 },
+      { date: "2022-01-01", amount: 50.0, status: "processing" },
+      { date: "2022-02-01", amount: 75.0, status: "delivered" },
+      { date: "2022-03-01", amount: 100.0, status: "delivered" },
     ],
     receipts: [
       { id: "0007", date: "2022-01-01", amount: 50.0 },

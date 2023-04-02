@@ -78,7 +78,8 @@ export default class AccountPage extends Component {
     return (
       <div style={this.styles.frame}>
         {this.state.activeComponent === "MyAccount" ? (
-          <MyAccount />
+          <MyAccount
+            loggedInUser={this.state.loggedInUser} />
         ) : this.state.activeComponent === "Login" ? (
           <Login
             setActiveComponent={this.setActiveComponent}

@@ -16,7 +16,7 @@ export default function AccountInfo({ userData }) {
   return (
     <div className="infoContainer">
       <div>
-        <img src={jakobImage} alt="Profile" width="100" className="customerImg" />
+        <img src={imageURL} alt="Profile" width="100" className="customerImg" />
       </div>
       <table className="infoTable">
         <tbody>

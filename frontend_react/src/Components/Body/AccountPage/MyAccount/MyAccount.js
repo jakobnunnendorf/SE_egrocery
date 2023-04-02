@@ -4,13 +4,15 @@ import Tracking from "./Tracking/Tracking";
 import RecurringOrders from "./RecurringOrders/RecurringOrders";
 import PurchaseHistory from "./PurchaseHistory/PurchaseHistory";
 import AccountInfo from "./AccountInfo/AccountInfo";
-import mockData from "../mockUserData.js";
 import "./MyAccount.css";
 
 export default class MyAccount extends Component {
-  state = {
-    activeTab: "accountInformation",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: "accountInformation",
+    };
+  }
 
   handleTabClick = (tab) => {
     this.setState({ activeTab: tab });
@@ -21,11 +23,15 @@ export default class MyAccount extends Component {
 
     switch (activeTab) {
       case "accountInformation":
-        return <AccountInfo userData={mockData[0]} />;
+        return <AccountInfo userData={this.props.loggedInUser} />;
       case "purchaseHistory":
-        return <PurchaseHistory purchaseData={mockData[0].purchaseHistory}/>;
+        return (
+          <PurchaseHistory
+            purchaseData={this.props.loggedInUser.purchaseHistory}
+          />
+        );
       case "tracking":
-        return <Tracking status={"processing"}/>;  //input can be either processing, shipped, or delivered
+        return <Tracking status={this.props.loggedInUser.purchaseHistory[1].status} />;  //input can be either processing, shipped, or delivered
       case "groceryLists":
         return <RecurringOrders />;
       default:
