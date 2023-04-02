@@ -19,6 +19,7 @@ const users = [
     ],
     imageURL:
       "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png",
+    role: "admin"
   },
   {
     firstName: "Jane",
@@ -40,6 +41,7 @@ const users = [
     ],
     imageURL:
       "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png",
+    role: "user"
   },
   {
     firstName: "Bob",
@@ -61,6 +63,7 @@ const users = [
     ],
     imageURL:
       "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png",
+    role: "user"
   },
   {
     firstName: "Alice",
@@ -82,6 +85,7 @@ const users = [
     ],
     imageURL:
       "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png",
+    role: "user"
   },
 ];
 

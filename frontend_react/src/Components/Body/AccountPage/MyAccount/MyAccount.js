@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "react-tabs/style/react-tabs.css";
 import Tracking from "./Tracking/Tracking";
-import RecurringOrders from "./RecurringOrders/RecurringOrders";
+import AdminPanel from "./AdminPanel/AdminPanel";
 import PurchaseHistory from "./PurchaseHistory/PurchaseHistory";
 import AccountInfo from "./AccountInfo/AccountInfo";
 import "./MyAccount.css";
@@ -23,7 +23,8 @@ export default class MyAccount extends Component {
 
     switch (activeTab) {
       case "accountInformation":
-        return <AccountInfo userData={this.props.loggedInUser} />;
+        return <AccountInfo
+          userData={this.props.loggedInUser} />;
       case "purchaseHistory":
         return (
           <PurchaseHistory
@@ -33,7 +34,7 @@ export default class MyAccount extends Component {
       case "tracking":
         return <Tracking status={this.props.loggedInUser.purchaseHistory[1].status} />;  //input can be either processing, shipped, or delivered
       case "groceryLists":
-        return <RecurringOrders />;
+        return <AdminPanel />;
       default:
         return null;
     }
@@ -61,11 +62,11 @@ export default class MyAccount extends Component {
           >
             Tracking
           </button>
-          <button
+          {this.props.loggedInUser.role === "admin"}<button
             onClick={() => this.handleTabClick("groceryLists")}
             className="flex-grow-1 list-group-item list-group-item-action"
           >
-            Grocery Lists
+            Admin Panel
           </button>
         </div>
         <div >{this.renderTabContent()}</div>
