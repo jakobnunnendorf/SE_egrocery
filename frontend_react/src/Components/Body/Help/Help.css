@@ -1,0 +1,32 @@
+
+.help {
+    font-family: 'Manrope', sans-serif;
+    padding-top: 20vh;
+  }
+   .help__title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+   .help__section {
+    margin-bottom: 30px;
+  }
+   .help__section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+   .help__contact-form,
+  .help__contact-info {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+  }
+   .help__contact-form {
+    margin-right: 5%;
+  }
+   .help__contact-info {
+    margin-left: 5%;
+  }
+ 
