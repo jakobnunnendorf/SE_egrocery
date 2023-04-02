@@ -1,4 +1,5 @@
 import React from "react"
+import cartPic from '../../../../../../media/cart_white.png'
 
 export default function AddToCart(props) {
     const styles = {
@@ -21,9 +22,9 @@ export default function AddToCart(props) {
             marginTop: "15px"
         }, 
         iconStyle: {
-            width: "30px",
-            height: "25px",
-            marginLeft: "10px"
+            width: "25px",
+            height: "23px",
+            marginLeft: "15px"
         },
         divStyle: {
             position: "relative",
@@ -44,7 +45,7 @@ export default function AddToCart(props) {
             ADD TO CART
             <img
               style={styles.iconStyle}
-              src="https://cdn-icons-png.flaticon.com/512/263/263142.png" // to be replaced with the correct icon
+              src={cartPic} // to be replaced with the correct icon
               alt=""
             />
           </button>
