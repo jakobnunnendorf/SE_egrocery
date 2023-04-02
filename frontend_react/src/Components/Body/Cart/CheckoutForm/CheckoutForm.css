@@ -1,16 +1,35 @@
-.checkout-form {
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 400px;
+  height: 100%;
+  padding: 1rem;
+}
+
+
+.checkout-form {
+  width: 500px;
+  height: 400px;
   margin: 0 auto;
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-.stripe-card-element {
-  margin-bottom: 1rem;
+.heading-checkout {
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-bottom: 4rem;
+  color: black;
 }
 
-/* button {
+.stripe-card-element {
+  margin-bottom: 4rem;
+  margin-top: 6rem;
+
+}
+.pay-button {
   width: 100%;
   padding: 0.5rem;
   background-color: #6772e5;
@@ -19,4 +38,4 @@
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-} */
+}
