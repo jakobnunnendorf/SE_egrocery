@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MyAccount from "./MyAccount/MyAccount";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
+import AccountBackendEmulator from "./AccountBackendEmulator";
 
 export default class AccountPage extends Component {
   constructor(props) {
@@ -9,14 +10,40 @@ export default class AccountPage extends Component {
     this.state = {
       hasAccount: false,
       activeComponent: "Signup",
+      userBase: [],
+      newUser: {},
     };
   }
-  createAccount = () => {
-    this.setState({ hasAccount: true });
+  createAccount = (formdata) => {
+    this.setState({
+      hasAccount: true,
+      newUser: {
+        firstName: formdata.firstName,
+        lastName: formdata.lastName,
+        email: formdata.email,
+        password: formdata.password,
+      }
+    });
   };
+
   setActiveComponent = (component) => {
     this.setState({ activeComponent: component });
   };
+
+  fetchUserBase = (database) => {
+    this.setState(
+      {
+        userBase: database,
+      },
+    )
+  }
+  
+  addUser = (user) => {
+    this.setState({
+      userBase: [...this.state.userBase, user],
+      newUser: {}
+    })
+  }
 
   styles = {
     frame: {
@@ -39,6 +66,11 @@ export default class AccountPage extends Component {
             setActiveComponent={this.setActiveComponent}
           />
         )}
+        <AccountBackendEmulator
+          fetchUserBase={this.fetchUserBase}
+          addUser={this.addUser}
+          newUser={this.state.newUser}
+        />
       </div>
     );
   }

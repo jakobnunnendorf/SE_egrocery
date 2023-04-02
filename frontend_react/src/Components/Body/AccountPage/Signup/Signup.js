@@ -15,7 +15,7 @@ export default function Signup(props) {
     };
 
     console.log("User registered:", formData);
-    props.createAccount();
+    props.createAccount(formData);
     confirmAccountCreation(true);
   };
 
