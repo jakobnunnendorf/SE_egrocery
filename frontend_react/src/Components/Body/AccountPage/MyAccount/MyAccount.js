@@ -23,9 +23,9 @@ export default class MyAccount extends Component {
       case "accountInformation":
         return <AccountInfo userData={mockData[0]} />;
       case "purchaseHistory":
-        return <PurchaseHistory />;
+        return <PurchaseHistory purchaseData={mockData[0].purchaseHistory}/>;
       case "tracking":
-        return <Tracking />;
+        return <Tracking status={"processing"}/>;  //input can be either processing, shipped, or delivered
       case "groceryLists":
         return <RecurringOrders />;
       default:
@@ -62,7 +62,7 @@ export default class MyAccount extends Component {
             Grocery Lists
           </button>
         </div>
-        <div className="col-md-8">{this.renderTabContent()}</div>
+        <div >{this.renderTabContent()}</div>
       </div>
     );
   }

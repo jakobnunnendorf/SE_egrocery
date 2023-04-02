@@ -1,4 +1,6 @@
 import React from "react";
+import jakobImage from "../jakob.jpeg";
+import "./AccountInfo.css";
 
 export default function AccountInfo({ userData }) {
   const {
@@ -12,16 +14,38 @@ export default function AccountInfo({ userData }) {
   } = userData;
 
   return (
-    <div>
+    <div className="infoContainer">
       <div>
-        <img src={imageURL} alt="Profile" width="100" />
+        <img src={jakobImage} alt="Profile" width="100" className="customerImg" />
       </div>
-      <div>Email: {email}</div>
-      <div>First Name: {firstName}</div>
-      <div>Last Name: {lastName}</div>
-      <div>Address: {address}</div>
-      <div>Birthdate: {birthdate}</div>
-      <div>Phone Number: {phoneNumber}</div>
+      <table className="infoTable">
+        <tbody>
+          <tr>
+            <td>Email:</td>
+            <td>{email}</td>
+          </tr>
+          <tr>
+            <td>First Name:</td>
+            <td>{firstName}</td>
+          </tr>
+          <tr>
+            <td>Last Name:</td>
+            <td>{lastName}</td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td>{address}</td>
+          </tr>
+          <tr>
+            <td>Birthdate:</td>
+            <td>{birthdate}</td>
+          </tr>
+          <tr>
+            <td>Phone Number:</td>
+            <td>{phoneNumber}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }

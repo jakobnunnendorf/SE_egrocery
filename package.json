@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "react-material-symbols": "^3.0.2",
+    "react-tabs": "^6.0.0"
+  },
+  "devDependencies": {
+    "prettier": "2.8.7"
+  }
+}
