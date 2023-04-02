@@ -12,8 +12,24 @@ export default class AccountPage extends Component {
       activeComponent: "Signup",
       userBase: [],
       newUser: {},
+      loggedInUser: {},
+      loginAttempt: {},
     };
   }
+
+  createLoginAttempt = (loginAttempt) => {
+    this.setState({
+      loginAttempt: loginAttempt,
+    });
+  };
+
+  loginUser = (user) => {
+    this.setState({
+      loggedInUser: user,
+      activeComponent: "MyAccount",
+    });
+  };
+
   createAccount = (formdata) => {
     this.setState({
       hasAccount: true,
@@ -22,7 +38,14 @@ export default class AccountPage extends Component {
         lastName: formdata.lastName,
         email: formdata.email,
         password: formdata.password,
-      }
+        phoneNumber: "",
+        address: "",
+        birthdate: "",
+        purchaseHistory: [],
+        receipts: [],
+        imageURL:
+          "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png",
+      },
     });
   };
 
@@ -31,19 +54,17 @@ export default class AccountPage extends Component {
   };
 
   fetchUserBase = (database) => {
-    this.setState(
-      {
-        userBase: database,
-      },
-    )
-  }
-  
+    this.setState({
+      userBase: database,
+    });
+  };
+
   addUser = (user) => {
     this.setState({
       userBase: [...this.state.userBase, user],
-      newUser: {}
-    })
-  }
+      newUser: {},
+    });
+  };
 
   styles = {
     frame: {
@@ -59,7 +80,10 @@ export default class AccountPage extends Component {
         {this.state.activeComponent === "MyAccount" ? (
           <MyAccount />
         ) : this.state.activeComponent === "Login" ? (
-          <Login setActiveComponent={this.setActiveComponent} />
+          <Login
+            setActiveComponent={this.setActiveComponent}
+            createLoginAttempt={this.createLoginAttempt}
+          />
         ) : (
           <Signup
             createAccount={this.createAccount}
@@ -70,6 +94,8 @@ export default class AccountPage extends Component {
           fetchUserBase={this.fetchUserBase}
           addUser={this.addUser}
           newUser={this.state.newUser}
+          loginAttempt={this.state.loginAttempt}
+          loginUser={this.loginUser}
         />
       </div>
     );

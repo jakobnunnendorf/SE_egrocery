@@ -10,18 +10,7 @@ export default function Login(props) {
       password: event.target.password.value,
     };
 
-    const user = users.find(
-      (user) =>
-        user.email === formData.email && user.password === formData.password
-    );
-
-    if (user) {
-      console.log("User logged in:", formData);
-      props.setActiveComponent("MyAccount")
-    } else {
-      console.log("Invalid email or password");
-      // Display an error message to inform the user that the login has failed
-    }
+    props.createLoginAttempt(formData);
   };
 
   return (
