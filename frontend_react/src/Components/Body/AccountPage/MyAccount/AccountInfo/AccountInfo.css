@@ -1,0 +1,49 @@
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.customerImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.infoContainer div {
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+
+
+  .infoTable {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .infoTable th,
+  .infoTable td {
+    padding: 7px;
+    border: 1px solid #e6e6e6;
+  }
+  
+  .infoTable th {
+    text-align: left;
+    
+  }
+  
+  .infoTable td {
+    text-align: center;
+  }

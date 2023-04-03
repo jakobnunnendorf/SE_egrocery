@@ -1,0 +1,62 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0.2;
+      visibility: hidden;
+    }
+    16.67% {
+      opacity: 1;
+      visibility: visible;
+    }
+    83.33% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0.2;
+      visibility: hidden;
+    }
+  }
+  
+  
+.purchaseTable {
+
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 40px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+.purchaseTable th,
+.purchaseTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.purchaseTable th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+.note {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 0.5em;
+    text-align: left;
+}
+.purchaseHistoryTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    animation: fadeInOut 4s ease-in-out infinite;
+}

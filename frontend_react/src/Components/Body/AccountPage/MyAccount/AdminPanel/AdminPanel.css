@@ -1,0 +1,57 @@
+.frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .input_field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 490px;
+    height: 135px;
+    margin-bottom: 10px;
+  }
+
+
+  .instructionsFrame {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: justify;
+    width: 600px;
+    height: 350px;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+  }
+  .instructionsFrame h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  .instructionsFrame p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 1;
+}
+  
+  .successfulUpload {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    color: green;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  

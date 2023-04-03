@@ -1,0 +1,8 @@
+input, textarea{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+label, button{
+    font-weight: 600;
+}
