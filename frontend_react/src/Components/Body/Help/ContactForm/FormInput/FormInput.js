@@ -31,24 +31,17 @@ export default function FormInput(props) {
 
     const form = useRef();
     
-    function sendEmail() {
-        emailjs
-          .send(
-            "service_raio2fy",
-            "template_kodpvyf",
-            emailParams,
-            "tKEmu2eMAB7uAjgYz"
-          )
-          .then(
-            (result) => {
-              console.log(result.text);
-            },
-            (error) => {
-              console.log(error.text);
-            }
-          );
+    function sendEmail(e){
+        e.preventDefault();
+    
+        emailjs.sendForm('service_raio2fy', 'template_rwpvtgd', form.current, 'tKEmu2eMAB7uAjgYz')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
         props.handleToggle();
-      }
+        };
       
     return (
     <>
