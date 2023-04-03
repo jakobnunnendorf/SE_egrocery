@@ -4,10 +4,13 @@ import reparatur from "./reparatur.jpeg";
 export default function Dank(props) {
     const styles = {
         component: {
+            marginTop: "15vh",
+            marginLeft: "10vw",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
+            height: "500px"
         },
         img: {
             width: "100%",
