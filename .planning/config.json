@@ -1,0 +1,24 @@
+{
+  "project_name": "eGrocery",
+  "project_type": "brownfield_rebuild",
+  "created": "2026-03-26",
+  "workflow": {
+    "commit_docs": true,
+    "research_before_planning": true,
+    "verification_after_phase": true,
+    "uat_after_phase": true
+  },
+  "models": {
+    "researcher": "sonnet",
+    "planner": "sonnet",
+    "executor": "sonnet",
+    "verifier": "sonnet",
+    "mapper": "haiku"
+  },
+  "scope": {
+    "frontend": true,
+    "backend": true,
+    "database": true,
+    "infrastructure": true
+  }
+}
