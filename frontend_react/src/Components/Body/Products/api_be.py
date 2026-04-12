@@ -1,21 +1,22 @@
-from flask import Flask, request, jsonify, json
+from flask import Flask, request, jsonify
 from pymongo import MongoClient
 from bson import ObjectId
 from flask_cors import CORS
 from user_routes import user_routes
+import json
 
 app = Flask(__name__)
 CORS(app)
-#app.register_blueprint(user_routes)
 
-# Custom JSON encoder to handle ObjectId
-class JSONEncoder(json.JSONEncoder):
+# Custom JSON provider to handle ObjectId (Flask 3.x compatible)
+class CustomJSONProvider(app.json_provider_class):
     def default(self, o):
         if isinstance(o, ObjectId):
             return str(o)
-        return super(JSONEncoder, self).default(o)
+        return super().default(o)
 
-app.json_encoder = JSONEncoder
+app.json_provider_class = CustomJSONProvider
+app.json = CustomJSONProvider(app)
 
 
 # set up the MongoDB connection
